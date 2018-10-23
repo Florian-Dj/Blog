@@ -1,11 +1,19 @@
 <?php
+    require('controller.php');
 
-    require('model.php');
-
-    $req = getPostsIndex();
-
-    require('viewIndex.php');
-
-
-
-
+    if (isset($_GET['action'])) {
+        if ($_GET['action'] == 'index') {
+            index();
+        }
+        elseif ($_GET['action'] == 'post') {
+            if (isset($_GET['post']) && $_GET['post'] > 0) {
+                post();
+            }
+            else {
+                echo 'Erreur : aucun identifiant de billet envoyé';
+            }
+        }
+    }
+    else {
+        index();
+    }

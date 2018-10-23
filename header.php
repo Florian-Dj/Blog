@@ -6,7 +6,7 @@
     <nav>
         <ul>
             <li><a href="index.php">Accueil</a></li>
-            <li><a href="posts.php">Posts</a></li>
+            <li><a href="?action=posts">Posts</a></li>
             <?php
                 session_start();
                 if (!empty($_SESSION['identifiant'])) {
