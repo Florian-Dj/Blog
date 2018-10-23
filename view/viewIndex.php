@@ -1,11 +1,11 @@
 <?php
-$title = 'Jean Forteroche | Acteur et Ecrivain';
+$title = 'J.Forteroche | Acteur et Ecrivain';
 ob_start();
 ?>
 
 <section id="home">
     <h2>Billet simple pour l'Alaska</h2>
-    <img src="alaska.jpg">
+    <img src="./public/images/alaska.jpg">
     <div id="posts_frame">
             <?php
             while ($data = $req->fetch()) {
@@ -15,7 +15,14 @@ ob_start();
                     <p>
                         Auteur: <?= htmlspecialchars($data['author'])?><br />
                         Publier le: <?= htmlspecialchars($data['date_create'])?> et mise à jour le: <?= htmlspecialchars($data['date_update'])?><br />
-                        <?= htmlspecialchars(substr($data['text'],0,120)) . " ...";?>
+                        <?php
+                            if (strlen($data['text']) > 120) {
+                                echo htmlspecialchars(substr($data['text'], 0, 120)) . "...";
+                            }
+                            else{
+                                echo htmlspecialchars($data['text']);
+                            }
+                        ?>
                     </p>
                 </div>
                 <?php

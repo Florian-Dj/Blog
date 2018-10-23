@@ -1,15 +1,15 @@
 <?php
-    require('model.php');
+    require('./model/model.php');
 
     function index()
     {
         $req = getPostsIndex();
-        require('viewIndex.php');
+        require('./view/viewIndex.php');
     }
 
     function post()
     {
         $posts = getPost($_GET['post']);
         $comments = getComment($_GET['post']);
-        require('viewPost.php');
+        require('./view/viewPost.php');
     }
