@@ -3,7 +3,6 @@
         <h1>Jean FORTEROCHE</h1>
         <h2>Acteur / Ecrivain</h2>
     </div>
-
     <nav>
         <ul>
             <li><a href="index.php">Accueil</a></li>
@@ -19,5 +18,4 @@
             ?>
         </ul>
     </nav>
-
 </header>
