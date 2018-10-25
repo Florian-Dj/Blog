@@ -18,15 +18,15 @@ ob_start();
     while ($comment = $comments->fetch())
     {
         echo '<p>Auteur : ' . $comment['username'] . ' <em>Publier le :' . $comment['date_create'] . "</em><br />" . $comment['text'] . '<br /><a href=""><button>Signaler</button></a><br>';
-        if (!empty($_SESSION['identifiant'])) {
-            echo '<a href="sup_commentaire.php?commentaire=' . $comment['id'] . '"><button>Supprimer le commentaire</button></a>';
+        if (!empty($_SESSION['username'])) {
+            echo '<a href="?action=delete_comment&comment=' . $comment['id'] . '"><button>Supprimer le commentaire</button></a>';
         }
     }
     ?>
 
     <div id="comment_add">
-        <form method="post" action="trait_com.php?episode=<?= $_GET['post']?>">
-            <p><label for="pseudo">Nom</label> <input type="text" name="pseudo" id="pseudo"></p>
+        <form method="post" action="?action=form_comment?episode=<?= $_GET['post']?>">
+            <p><label for="username">Nom</label> <input type="text" name="username" id="username"></p>
             <p><label for="text">Texte</label> <textarea name="text" id="text"></textarea></p><br>
             <input type="submit" value="Ajouter Commentaire">
         </form>
