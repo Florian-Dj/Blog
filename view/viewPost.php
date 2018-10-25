@@ -10,15 +10,14 @@ ob_start();
             Auteur: <?= htmlspecialchars($posts['author'])?><br />
             Publier le: <?= htmlspecialchars($posts['date_create'])?> et mise à jour le: <?= htmlspecialchars($posts['date_update'])?><br />
             <?= htmlspecialchars($posts['text']) ?>
-        </p>♥
+        </p>
     </div>
-
 
     <h3>Commentaires</h3>
     <?php
     while ($comment = $comments->fetch())
     {
-        echo '<p>Auteur : ' . $comment['username'] . ' <em>Publier le :' . $comment['date_create'] . "</em><br>" . $comment['text'] . '<br> <a href=""><button>Signaler</button></a><br>';
+        echo '<p>Auteur : ' . $comment['username'] . ' <em>Publier le :' . $comment['date_create'] . "</em><br />" . $comment['text'] . '<br /><a href=""><button>Signaler</button></a><br>';
         if (!empty($_SESSION['identifiant'])) {
             echo '<a href="sup_commentaire.php?commentaire=' . $comment['id'] . '"><button>Supprimer le commentaire</button></a>';
         }

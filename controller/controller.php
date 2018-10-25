@@ -13,3 +13,14 @@
         $comments = getComment($_GET['post']);
         require('./view/viewPost.php');
     }
+
+    function posts()
+    {
+        $req = getPosts();
+        require('./view/viewPosts.php');
+    }
+
+    function connect()
+    {
+        require('./view/viewConnect.php');
+    }

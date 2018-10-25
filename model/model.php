@@ -2,17 +2,16 @@
 function getPostsIndex()
 {
     $db = dbConnect();
-    $req = $db->query('SELECT * FROM post ORDER BY date_create DESC LIMIT 0,4');
+    $req = $db->query('SELECT * FROM post ORDER BY date_create DESC LIMIT 0,2');
     return $req;
 }
 
-function getPosts($postId)
+function getPosts()
 {
     $db = dbConnect();
     $req = $db->query('SELECT * FROM post');
     return $req;
 }
-
 
 function getPost($postId)
 {
@@ -23,7 +22,6 @@ function getPost($postId)
     return $posts;
 }
 
-
 function getComment($postId)
 {
     $db = dbConnect();
@@ -31,8 +29,6 @@ function getComment($postId)
     $comments->execute(array($postId));
     return $comments;
 }
-
-
 
 function dbConnect()
 {

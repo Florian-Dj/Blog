@@ -5,15 +5,15 @@
     </div>
     <nav>
         <ul>
-            <li><a href="index.php">Accueil</a></li>
+            <li><a href="./index.php">Accueil</a></li>
             <li><a href="?action=posts">Posts</a></li>
             <?php
                 session_start();
                 if (!empty($_SESSION['identifiant'])) {
-                    echo '<li><a href="disconnect.php">Déconnexion</a></li>';
+                    echo '<li><a href="?action=disconnect">Déconnexion</a></li>';
                 }
                 else {
-                    echo '<li><a href="connect.php">S\'identifier</a></li>';
+                    echo '<li><a href="?action=connect">S\'identifier</a></li>';
                 }
             ?>
         </ul>
