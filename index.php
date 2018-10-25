@@ -21,6 +21,12 @@
         elseif ($_GET['action'] == 'connect'){
             connect();
         }
+        elseif ($_GET['action'] == 'form_connect'){
+            form_connect();
+        }
+        elseif ($_GET['action'] == 'disconnect'){
+            disconnect();
+        }
     }
     else {
         index();

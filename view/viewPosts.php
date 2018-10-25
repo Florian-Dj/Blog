@@ -6,7 +6,7 @@ ob_start();
     <section id="posts"><?php
         while ($data = $req->fetch()) {
             ?>
-            <div class="posts_frame">
+            <div id="posts_frame">
                 <h3><a href="?action=post&post=<?=$data['id']?>"><?= htmlspecialchars($data['title']) ?></a></h3>
                 <p>
                     Auteur: <?= htmlspecialchars($data['author'])?><br />

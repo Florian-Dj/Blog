@@ -24,3 +24,15 @@
     {
         require('./view/viewConnect.php');
     }
+
+    function form_connect()
+    {
+        $admin = getConnect();
+    }
+
+    function disconnect(){
+        session_start();
+        session_destroy();
+        header('Location: ./index.php');
+
+    }
