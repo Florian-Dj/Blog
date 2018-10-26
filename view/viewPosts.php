@@ -20,8 +20,8 @@ ob_start();
                         echo htmlspecialchars($data['text']) . "<br />";
                     }
                     if (!empty($_SESSION['username'])) {
-                        echo '<a href="?action=edit_posts&post=' . $data['id'] . '"><button>Editer Post</button></a>';
-                        echo '<a href="?action=delete_posts&post=' . $data['id'] . '"><button>Supprimer Post</button></a>';
+                        echo '<a href="?action=edit_post&post=' . $data['id'] . '"><button>Editer Post</button></a>';
+                        echo '<a href="?action=delete_post&post=' . $data['id'] . '"><button>Supprimer Post</button></a>';
                     }
                     ?>
                 </p>

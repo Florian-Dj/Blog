@@ -30,6 +30,12 @@
         $admin = getAddPost();
     }
 
+    function delete_post()
+    {
+        $post = getDelPost($_GET['post']);
+    }
+
+
     function connect()
     {
         require('./view/viewConnect.php');

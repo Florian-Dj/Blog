@@ -34,6 +34,9 @@
         elseif ($_GET['action'] == 'form_add_post'){
             form_add_post();
         }
+        elseif ($_GET['action'] == 'delete_post'){
+            delete_post();
+        }
     }
     else {
         index();

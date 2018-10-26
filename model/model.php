@@ -43,6 +43,17 @@
         return $req;
     }
 
+    function getDelPost($postId)
+    {
+        $db = dbConnect();
+        $post = $db->prepare('DELETE FROM post WHERE id = ?');
+        $post->execute(array($_GET['post']));
+        $comment = $db->prepare('DELETE FROM comment WHERE post_id = ?');
+        $comment->execute(array($_GET['post']));
+        header('Location: ?action=posts');
+        return $post;
+    }
+
     function getConnect()
     {
         $db = dbConnect();
