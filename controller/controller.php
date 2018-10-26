@@ -58,8 +58,13 @@
 
     function report_comment()
     {
-        $comment = getReportComment($_GET['comment']);
+        $comment = getFormReportComment($_GET['comment']);
         require('./view/viewReport.php');
+    }
+
+    function form_report()
+    {
+        $report = getReportComment();
     }
 
 

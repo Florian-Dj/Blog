@@ -52,6 +52,9 @@
         elseif ($_GET['action'] == 'report_comment'){
             report_comment();
         }
+        elseif ($_GET['action'] == 'form_report'){
+            form_report();
+        }
     }
     else {
         index();
