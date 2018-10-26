@@ -35,6 +35,17 @@
         $post = getDelPost($_GET['post']);
     }
 
+    function edit_post()
+    {
+        $posts = getPost($_GET['post']);
+        require('./view/viewEditPost.php');
+    }
+
+    function form_edit_post()
+    {
+        $post = getEditPost($_GET['post']);
+    }
+
 
     function connect()
     {

@@ -54,6 +54,20 @@
         return $post;
     }
 
+    function getEditPost($postId)
+    {
+        $db = dbConnect();
+        $post = $db->prepare('UPDATE post SET title = :title, text = :text, date_update = NOW() WHERE id = :id');
+        $post->execute(array(
+            'title' => $_POST['title_post'],
+            'text' => $_POST['text_post'],
+            'id' => $_GET['post'],
+        ));
+        header('Location: ?action=post&post=' . $_GET['post']);
+        return $post;
+    }
+
+
     function getConnect()
     {
         $db = dbConnect();
