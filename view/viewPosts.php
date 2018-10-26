@@ -29,7 +29,7 @@ ob_start();
             <?php
         }
         if (!empty($_SESSION['username'])) {
-            echo '<br/><a href="?action=add_post"><button>Ajouter un épisode</button></a>';
+            echo '<br/><a href="?action=add_post"><button>Ajouter un Post</button></a>';
         }
         ?>
     </section>

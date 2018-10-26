@@ -43,6 +43,9 @@
         elseif ($_GET['action'] == 'form_edit_post'){
             form_edit_post();
         }
+        elseif ($_GET['action'] == 'form_comment'){
+            form_comment();
+        }
     }
     else {
         index();

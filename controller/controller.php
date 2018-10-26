@@ -43,7 +43,12 @@
 
     function form_edit_post()
     {
-        $post = getEditPost($_GET['post']);
+        $post = getEditPost();
+    }
+
+    function form_comment()
+    {
+        $comment = getAddComment();
     }
 
 

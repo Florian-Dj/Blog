@@ -54,7 +54,7 @@
         return $post;
     }
 
-    function getEditPost($postId)
+    function getEditPost()
     {
         $db = dbConnect();
         $post = $db->prepare('UPDATE post SET title = :title, text = :text, date_update = NOW() WHERE id = :id');
@@ -67,6 +67,18 @@
         return $post;
     }
 
+    function getAddComment()
+    {
+        $db = dbConnect();
+        $comment = $db->prepare('INSERT INTO comment(username, post_id, text, date_create) VALUES(:username, :post_id, :text, NOW())');
+        $comment->execute(array(
+            'username' => $_POST['username'],
+            'post_id' => $_GET['post'],
+            'text' => $_POST['text_comment'],
+        ));
+        header('Location: ?action=post&post=' . $_GET['post']);
+        return $comment;
+    }
 
     function getConnect()
     {

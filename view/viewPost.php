@@ -25,9 +25,9 @@ ob_start();
     ?>
 
     <div id="comment_add">
-        <form method="post" action="?action=form_comment?episode=<?= $_GET['post']?>">
+        <form method="post" action="?action=form_comment&post=<?= $_GET['post']?>">
             <p><label for="username">Nom</label> <input type="text" name="username" id="username"></p>
-            <p><label for="text">Texte</label> <textarea name="text" id="text"></textarea></p><br>
+            <p><label for="text_comment">Texte</label> <textarea name="text_comment" id="text_comment"></textarea></p><br>
             <input type="submit" value="Ajouter Commentaire">
         </form>
     </div>
