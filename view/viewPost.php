@@ -17,9 +17,10 @@ ob_start();
     <?php
     while ($comment = $comments->fetch())
     {
-        echo '<p>Auteur : ' . $comment['username'] . ' <em>Publier le :' . $comment['date_create'] . "</em><br />" . $comment['text'] . '<br /><a href=""><button>Signaler</button></a><br>';
+        echo '<p>Auteur : ' . $comment['username'] . ' <em>Publier le :' . $comment['date_create'] . "</em><br />" . $comment['text'] . '<br />';
+        echo '<a href="?action=report_comment&post=' . $posts['id'] . '&comment=' . $comment['id'] . '"><button>Signaler</button></a><br>';
         if (!empty($_SESSION['username'])) {
-            echo '<a href="?action=delete_comment&comment=' . $comment['id'] . '"><button>Supprimer le commentaire</button></a>';
+            echo '<a href="?action=delete_comment&post=' .$posts['id'] . '&comment=' . $comment['id'] . '"><button>Supprimer le commentaire</button></a>';
         }
     }
     ?>

@@ -32,7 +32,7 @@
 
     function delete_post()
     {
-        $post = getDelPost($_GET['post']);
+        $post = getDelPost();
     }
 
     function edit_post()
@@ -49,6 +49,17 @@
     function form_comment()
     {
         $comment = getAddComment();
+    }
+
+    function delete_comment()
+    {
+        $comment = getDelComment();
+    }
+
+    function report_comment()
+    {
+        $comment = getReportComment($_GET['comment']);
+        require('./view/viewReport.php');
     }
 
 

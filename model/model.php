@@ -43,7 +43,7 @@
         return $req;
     }
 
-    function getDelPost($postId)
+    function getDelPost()
     {
         $db = dbConnect();
         $post = $db->prepare('DELETE FROM post WHERE id = ?');
@@ -78,6 +78,23 @@
         ));
         header('Location: ?action=post&post=' . $_GET['post']);
         return $comment;
+    }
+
+    function getDelComment()
+    {
+        $db = dbConnect();
+        $comment = $db->prepare('DELETE FROM comment WHERE id = ?');
+        $comment->execute(array($_GET['comment']));
+        header('Location: ?action=post&post=' . $_GET['post']);
+        return $comment;
+    }
+
+    function getReportComment($commentId)
+    {
+        $db = dbConnect();
+        $comment = $db->prepare('SELECT * FROM comment WHERE id = ?');
+        $comment->execute(array($commentId));
+        return $comment->fetch();
     }
 
     function getConnect()

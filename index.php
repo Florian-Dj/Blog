@@ -46,6 +46,12 @@
         elseif ($_GET['action'] == 'form_comment'){
             form_comment();
         }
+        elseif ($_GET['action'] == 'delete_comment'){
+            delete_comment();
+        }
+        elseif ($_GET['action'] == 'report_comment'){
+            report_comment();
+        }
     }
     else {
         index();
