@@ -50,6 +50,8 @@
         $post->execute(array($_GET['post']));
         $comment = $db->prepare('DELETE FROM comment WHERE post_id = ?');
         $comment->execute(array($_GET['post']));
+        $report = $db->prepare('DELETE FROM report WHERE id_post = ?');
+        $report->execute(array($_GET['post']));
         header('Location: ?action=posts');
         return $post;
     }
@@ -85,6 +87,8 @@
         $db = dbConnect();
         $comment = $db->prepare('DELETE FROM comment WHERE id = ?');
         $comment->execute(array($_GET['comment']));
+        $report = $db->prepare('DELETE FROM report WHERE id_post = ?');
+        $report->execute(array($_GET['post']));
         header('Location: ?action=post&post=' . $_GET['post']);
         return $comment;
     }
