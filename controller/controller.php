@@ -67,6 +67,12 @@
         $report = getReportComment();
     }
 
+    function management()
+    {
+        $management = getManagement();
+        require('./view/viewManagement.php');
+    }
+
 
     function connect()
     {

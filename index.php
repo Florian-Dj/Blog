@@ -55,6 +55,9 @@
         elseif ($_GET['action'] == 'form_report'){
             form_report();
         }
+        elseif ($_GET['action'] == 'management'){
+            management();
+        }
     }
     else {
         index();

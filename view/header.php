@@ -9,7 +9,7 @@
             <li><a href="?action=posts">Posts</a></li>
             <?php
                 if (!empty($_SESSION['username'])) {
-                    echo '<li><a href="?action=gestion">Gestion</a></li>';
+                    echo '<li><a href="?action=management">Gestion</a></li>';
                     echo '<li><a href="?action=disconnect">Déconnexion</a></li>';
                 }
                 else {
