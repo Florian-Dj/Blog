@@ -20,13 +20,16 @@ ob_start();
                         echo htmlspecialchars($data['text']) . "<br />";
                     }
                     if (!empty($_SESSION['username'])) {
-                        echo '<a href="?action=edit_posts&post=' . $data['id'] . '"><button>Editer Episode</button></a>';
-                        echo '<a href="?action=delete_posts&post=' . $data['id'] . '"><button>Supprimer Episode</button></a>';
+                        echo '<a href="?action=edit_posts&post=' . $data['id'] . '"><button>Editer Post</button></a>';
+                        echo '<a href="?action=delete_posts&post=' . $data['id'] . '"><button>Supprimer Post</button></a>';
                     }
                     ?>
                 </p>
             </div>
             <?php
+        }
+        if (!empty($_SESSION['username'])) {
+            echo '<br/><a href="?action=add_post"><button>Ajouter un épisode</button></a>';
         }
         ?>
     </section>

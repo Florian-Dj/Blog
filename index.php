@@ -28,6 +28,12 @@
         elseif ($_GET['action'] == 'disconnect'){
             disconnect();
         }
+        elseif ($_GET['action'] == 'add_post'){
+            add_post();
+        }
+        elseif ($_GET['action'] == 'form_add_post'){
+            form_add_post();
+        }
     }
     else {
         index();

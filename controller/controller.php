@@ -20,6 +20,16 @@
         require('./view/viewPosts.php');
     }
 
+    function add_post()
+    {
+        require('./view/viewAddPost.php');
+    }
+
+    function form_add_post()
+    {
+        $admin = getAddPost();
+    }
+
     function connect()
     {
         require('./view/viewConnect.php');
@@ -34,5 +44,4 @@
         session_start();
         session_destroy();
         header('Location: ./index.php');
-
     }

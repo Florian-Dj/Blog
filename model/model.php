@@ -30,6 +30,19 @@
         return $comments;
     }
 
+    function getAddPost()
+    {
+        $db = dbConnect();
+        $req = $db->prepare('INSERT INTO post(author, title, text, date_create, date_update) VALUES(:author, :title, :text, NOW(), NOW())');
+        $req->execute(array(
+            'author' => $_SESSION['username'],
+            'title' => $_POST['title_post'],
+            'text' => $_POST['text_post'],
+        ));
+        header('Location: ?action=posts');
+        return $req;
+    }
+
     function getConnect()
     {
         $db = dbConnect();
@@ -37,7 +50,7 @@
         $admin = $req->fetch();
         $isPasswordCorrect = password_verify($_POST['password'], $admin['password']);
         if (!$admin){
-            echo 'Mauvais  identifiants ou mot de passe ! 1';
+            echo 'Mauvais  identifiant ou mot de passe';
         }
         else {
             if ($isPasswordCorrect){
@@ -47,11 +60,12 @@
                 header('Location: ./index.php');
             }
             else {
-                echo 'Mauvais  identifiant ou mot de passe ! 2';
+                echo 'Mauvais  identifiant ou mot de passe';
             }
         }
         return $admin;
     }
+
 
     function dbConnect()
     {
