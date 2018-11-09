@@ -9,14 +9,14 @@
     function getPosts()
     {
         $db = dbConnect();
-        $req = $db->query('SELECT * FROM post');
+        $req = $db->query('SELECT * FROM post ORDER BY post_id');
         return $req;
     }
 
     function getPost($postId)
     {
         $db = dbConnect();
-        $req = $db->prepare('SELECT * FROM post WHERE id = ?');
+        $req = $db->prepare('SELECT * FROM post WHERE post_id = ?');
         $req->execute(array($postId));
         $posts = $req->fetch();
         return $posts;
@@ -46,11 +46,11 @@
     function getDelPost()
     {
         $db = dbConnect();
-        $post = $db->prepare('DELETE FROM post WHERE id = ?');
+        $post = $db->prepare('DELETE FROM post WHERE post_id = ?');
         $post->execute(array($_GET['post']));
         $comment = $db->prepare('DELETE FROM comment WHERE post_id = ?');
         $comment->execute(array($_GET['post']));
-        $report = $db->prepare('DELETE FROM report WHERE id_post = ?');
+        $report = $db->prepare('DELETE FROM report WHERE post_id = ?');
         $report->execute(array($_GET['post']));
         header('Location: ?action=posts');
         return $post;
@@ -59,7 +59,7 @@
     function getEditPost()
     {
         $db = dbConnect();
-        $post = $db->prepare('UPDATE post SET title = :title, text = :text, date_update = NOW() WHERE id = :id');
+        $post = $db->prepare('UPDATE post SET title = :title, text = :text, date_update = NOW() WHERE post_id = :id');
         $post->execute(array(
             'title' => $_POST['title_post'],
             'text' => $_POST['text_post'],
@@ -85,9 +85,9 @@
     function getDelComment()
     {
         $db = dbConnect();
-        $comment = $db->prepare('DELETE FROM comment WHERE id = ?');
+        $comment = $db->prepare('DELETE FROM comment WHERE comment_id = ?');
         $comment->execute(array($_GET['comment']));
-        $report = $db->prepare('DELETE FROM report WHERE id_post = ?');
+        $report = $db->prepare('DELETE FROM report WHERE post_id = ?');
         $report->execute(array($_GET['post']));
         header('Location: ?action=post&post=' . $_GET['post']);
         return $comment;
@@ -96,7 +96,7 @@
     function getFormReportComment($commentId)
     {
         $db = dbConnect();
-        $comment = $db->prepare('SELECT * FROM comment WHERE id = ?');
+        $comment = $db->prepare('SELECT * FROM comment WHERE comment_id = ?');
         $comment->execute(array($commentId));
         return $comment->fetch();
     }
@@ -104,7 +104,7 @@
     function getReportComment()
     {
         $db = dbConnect();
-        $comment = $db->prepare('INSERT INTO report(id_post, id_comment, author_report, text_report, date_report, status) VALUES(:id_post, :id_comment, :author_report, :text_report, NOW(), :status)');
+        $comment = $db->prepare('INSERT INTO report(post_id, comment_id, author_report, text_report, date_report, status) VALUES(:id_post, :id_comment, :author_report, :text_report, NOW(), :status)');
         $comment->execute(array(
             'id_post' => $_GET['post'],
             'id_comment' => $_GET['comment'],
