@@ -13,8 +13,10 @@ class CommentManager
     public function postComment($postId, $author, $comment)
     {
         $db = $this->dbConnect();
-        $comments = $db->prepare()
+        $comments = $db->prepare('INSERT INTO comment(post_id, username, text, date_create) VALUES(?, ?, ?, NOW())');
+        $affectedLines = $comments->execute(array($postId, $author, $comment));
 
+        return $affectedLines;
     }
 
     private function dbConnect()
@@ -27,5 +29,4 @@ class CommentManager
             die('Erreur : ' . $e->getMessage());
         }
     }
-
 }
