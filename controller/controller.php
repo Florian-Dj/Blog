@@ -5,7 +5,7 @@
 
     function index()
     {
-        $postManager = new PostManager();
+        $postManager = new \OpenClassRoom\Blog\Model\PostManager();
         $req = $postManager->getPostsIndex();
 
         require('./view/front/viewIndex.php');
@@ -13,7 +13,7 @@
 
     function posts()
     {
-        $postsManager = new PostManager();
+        $postsManager = new \OpenClassRoom\Blog\Model\PostManager();
         $posts = $postsManager->getPosts();
 
         require('./view/front/viewPosts.php');
@@ -21,8 +21,8 @@
 
     function post()
     {
-        $postManager = new PostManager();
-        $commentManager = new CommentManager();
+        $postManager = new \OpenClassRoom\Blog\Model\PostManager();
+        $commentManager = new \OpenClassRoom\Blog\Model\CommentManager();
 
         $posts = $postManager->getPost(htmlspecialchars($_GET['post']));
         $comments = $commentManager->getComments(htmlspecialchars($_GET['post']));
@@ -32,7 +32,7 @@
 
     function addComment($postId, $author, $comment)
     {
-        $commentManager = new CommentManager();
+        $commentManager = new \OpenClassRoom\Blog\Model\CommentManager();
 
         $affectedLines = $commentManager->postComment($postId, $author, $comment);
 
