@@ -24,8 +24,13 @@
             case 'add_post':
                 addPost();
                 break;
-            case 'form_add_post':
-                formAddPost($_POST['title_post'], $_SESSION['username'], $_POST['text_post']);
+            case 'formAddPost':
+                if (!empty($_POST['title_post']) && !empty($_POST['text_post'])) {
+                    formAddPost($_POST['title_post'], $_SESSION['username'], $_POST['text_post']);
+                }
+                else{
+                    echo "Erreur : tous les champs ne sont pas remplis !";
+                }
                 break;
             case 'delete_post':
                 delete_post();

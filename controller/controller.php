@@ -30,6 +30,26 @@
         require('./view/front/viewPost.php');
     }
 
+    function addPost()
+    {
+        require('./view/back/viewAddPost.php');
+    }
+
+    function formAddPost($title, $author, $text)
+    {
+        $postManager = new \OpenClassRoom\Blog\Model\PostManager();
+
+        $affectedLines = $postManager->getAddPost($title, $author, $text);
+
+        if($affectedLines === false){
+            die('Impossible d\'ajouter le post !');
+        }
+        else{
+            header('Location: ?action=posts');
+        }
+    }
+
+
     function addComment($postId, $author, $comment)
     {
         $commentManager = new \OpenClassRoom\Blog\Model\CommentManager();
@@ -45,27 +65,6 @@
     }
 
 
-
-
-
-    function addPost()
-    {
-        require('./view/back/viewAddPost.php');
-    }
-
-    function formAddPost($title, $author, $text)
-    {
-        $postManager = new \OpenClassRoom\Blog\Model\PostManager();
-
-        $affectedLines = $postManager->getAddPost($title, $author, $text);
-
-        if($affectedLines === false){
-            throw new Exception('Impossible d\'ajouter le post !');
-        }
-        else{
-            header('Location index.php?action=posts');
-        }
-    }
 
     function delete_post()
     {
