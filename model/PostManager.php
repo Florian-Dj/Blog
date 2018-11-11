@@ -33,7 +33,7 @@ class PostManager extends Manager
         return $posts;
     }
 
-    function getAddPost($title, $author, $text)
+    public function getAddPost($title, $author, $text)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('INSERT INTO post(title, author, text, date_create, date_update) VALUES(?, ?, ?, NOW(), NOW())');
@@ -41,4 +41,30 @@ class PostManager extends Manager
 
         return $affectedLines;
     }
+
+    public function getDeletePost($postId)
+    {
+        $db = $this->dbConnect();
+        $post = $db->prepare('DELETE FROM post WHERE post_id = ?');
+        $post->execute(array($postId));
+        $comment = $db->prepare('DELETE FROM comment WHERE post_id = ?');
+        $comment->execute(array($postId));
+        $report = $db->prepare('DELETE FROM report WHERE post_id = ?');
+        $report->execute(array($postId));
+
+        return $post;
+    }
+
+    public function getUpdatePost($postId, $postTitle, $postText)
+    {
+        $db = $this->dbConnect();
+        $post = $db->prepare('UPDATE post SET title = :title, text = :text, date_update = NOW() WHERE post_id = :id');
+        $post->execute(array(
+            'title' => $postTitle,
+            'text' => $postText,
+            'id' => $postId,
+        ));
+        return $post;
+    }
+
 }

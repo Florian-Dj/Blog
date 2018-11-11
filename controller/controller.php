@@ -7,10 +7,10 @@
     {
         $postManager = new \OpenClassRoom\Blog\Model\PostManager();
         $req = $postManager->getPostsIndex();
-
         require('./view/front/viewIndex.php');
     }
 
+    //Management all posts
     function posts()
     {
         $postsManager = new \OpenClassRoom\Blog\Model\PostManager();
@@ -19,13 +19,14 @@
         require('./view/front/viewPosts.php');
     }
 
-    function post()
+    //Management post
+    function post($postId)
     {
         $postManager = new \OpenClassRoom\Blog\Model\PostManager();
         $commentManager = new \OpenClassRoom\Blog\Model\CommentManager();
 
-        $posts = $postManager->getPost(htmlspecialchars($_GET['post']));
-        $comments = $commentManager->getComments(htmlspecialchars($_GET['post']));
+        $posts = $postManager->getPost($postId);
+        $comments = $commentManager->getComments($postId);
 
         require('./view/front/viewPost.php');
     }
@@ -49,7 +50,38 @@
         }
     }
 
+    function deletePost($postId)
+    {
+        $postManager =  new \OpenClassRoom\Blog\Model\PostManager();
+        $post = $postManager->getDeletePost($postId);
 
+        if($post === false){
+            die('Impossible d\'ajouter le post !');
+        }
+        else{
+            header('Location: ?action=posts');
+        }
+    }
+
+    function editPost($postId)
+    {
+        $postManager = new \OpenClassRoom\Blog\Model\PostManager();
+
+        $posts = $postManager->getPost($postId);
+
+        require('./view/back/viewEditPost.php');
+    }
+
+    function formUpdatePost($postId, $postTitle, $postText)
+    {
+        $postManager = new \OpenClassRoom\Blog\Model\PostManager();
+
+        $post = $postManager->getUpdatePost($postId, $postTitle, $postText);
+
+        header('Location: ?action=post&post=' . $_GET['post']);
+    }
+
+    //Management comments
     function addComment($postId, $author, $comment)
     {
         $commentManager = new \OpenClassRoom\Blog\Model\CommentManager();
@@ -64,23 +96,6 @@
         }
     }
 
-
-
-    function delete_post()
-    {
-        $post = getDelPost();
-    }
-
-    function edit_post()
-    {
-        $posts = getPost($_GET['post']);
-        require('./view/back/viewEditPost.php');
-    }
-
-    function form_edit_post()
-    {
-        $post = getEditPost();
-    }
 
     function delete_comment()
     {

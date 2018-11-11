@@ -1,31 +1,5 @@
 <?php
 
-    function getAddPost()
-    {
-        $db = dbConnect();
-        $req = $db->prepare('INSERT INTO post(author, title, text, date_create, date_update) VALUES(:author, :title, :text, NOW(), NOW())');
-        $req->execute(array(
-            'author' => $_SESSION['username'],
-            'title' => $_POST['title_post'],
-            'text' => $_POST['text_post'],
-        ));
-        header('Location: ?action=posts');
-        return $req;
-    }
-
-    function getDelPost()
-    {
-        $db = dbConnect();
-        $post = $db->prepare('DELETE FROM post WHERE post_id = ?');
-        $post->execute(array($_GET['post']));
-        $comment = $db->prepare('DELETE FROM comment WHERE post_id = ?');
-        $comment->execute(array($_GET['post']));
-        $report = $db->prepare('DELETE FROM report WHERE post_id = ?');
-        $report->execute(array($_GET['post']));
-        header('Location: ?action=posts');
-        return $post;
-    }
-
     function getEditPost()
     {
         $db = dbConnect();
@@ -38,20 +12,6 @@
         header('Location: ?action=post&post=' . $_GET['post']);
         return $post;
     }
-
-    /*
-    function getAddComment()
-    {
-        $db = dbConnect();
-        $comment = $db->prepare('INSERT INTO comment(username, post_id, text, date_create) VALUES(:username, :post_id, :text, NOW())');
-        $comment->execute(array(
-            'username' => $_POST['username'],
-            'post_id' => $_GET['post'],
-            'text' => $_POST['text_comment'],
-        ));
-        header('Location: ?action=post&post=' . $_GET['post']);
-        return $comment;
-    }*/
 
     function getDelComment()
     {

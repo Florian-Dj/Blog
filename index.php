@@ -12,10 +12,10 @@
 
             case 'post':
                 if (isset($_GET['post']) && $_GET['post'] > 0) {
-                    post();
+                    post($_GET['post']);
                 }
                 else {
-                    throw new Exception('Erreur : Aucun identifiant de billet envoyé');
+                    echo 'Erreur : Aucun identifiant de post envoyé';
                 }
                 break;
             case 'posts':
@@ -32,14 +32,34 @@
                     echo "Erreur : tous les champs ne sont pas remplis !";
                 }
                 break;
-            case 'delete_post':
-                delete_post();
+            case 'deletePost':
+                if (isset($_GET['post']) && $_GET['post'] > 0){
+                    deletePost($_GET['post']);
+                }
+                else{
+                    echo 'Erreur : Aucun identifiant de post envoyé';
+                }
                 break;
-            case 'edit_post':
-                edit_post();
+            case 'editPost':
+                if (isset($_GET['post']) && $_GET['post'] > 0) {
+                    editPost($_GET['post']);
+                }
+                else{
+                    echo 'Erreur : Aucun identifiant de post envoyé';
+                }
                 break;
-            case 'form_edit_post':
-                form_edit_post();
+            case 'formUpdatePost':
+                if (isset($_GET['post']) && $_GET['post'] > 0) {
+                    if (!empty($_POST['title_post']) && !empty($_POST['text_post'])) {
+                        formUpdatePost($_GET['post'], $_POST['title_post'], $_POST['text_post']);
+                    }
+                    else{
+                        echo "Erreur : tous les champs ne sont pas remplis !";
+                    }
+                }
+                else{
+                    echo 'Erreur : Aucun identifiant de post envoyé';
+                }
                 break;
 
             case 'addComment':
