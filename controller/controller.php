@@ -1,28 +1,38 @@
 <?php
     require('./model/model.php');
+    require('./model/PostManager.php');
 
     function index()
     {
         $req = getPostsIndex();
-        require('./view/viewIndex.php');
-    }
-
-    function post()
-    {
-        $posts = getPost($_GET['post']);
-        $comments = getComment($_GET['post']);
-        require('./view/viewPost.php');
+        require('./view/front/viewIndex.php');
     }
 
     function posts()
     {
-        $req = getPosts();
-        require('./view/viewPosts.php');
+        $postsManager = new PostManager();
+        $posts = $postsManager->getPosts();
+        require('./view/front/viewPosts.php');
     }
+
+    function post()
+    {
+        $postManager = new PostManager();
+        $commentManager = new CommentManager();
+
+
+        $posts = $postManager->getPost(htmlspecialchars($_GET['post']));
+        $comments = $commentManager->getComment(htmlspecialchars($_GET['post']));
+        require('./view/front/viewPost.php');
+    }
+
+
+
+
 
     function add_post()
     {
-        require('./view/viewAddPost.php');
+        require('./view/back/viewAddPost.php');
     }
 
     function form_add_post()
@@ -38,7 +48,7 @@
     function edit_post()
     {
         $posts = getPost($_GET['post']);
-        require('./view/viewEditPost.php');
+        require('./view/back/viewEditPost.php');
     }
 
     function form_edit_post()
@@ -59,7 +69,7 @@
     function report_comment()
     {
         $comment = getFormReportComment($_GET['comment']);
-        require('./view/viewReport.php');
+        require('./view/back/viewReport.php');
     }
 
     function form_report()
@@ -70,13 +80,13 @@
     function management()
     {
         $management = getManagement();
-        require('./view/viewManagement.php');
+        require('./view/back/viewManagement.php');
     }
 
 
     function connect()
     {
-        require('./view/viewConnect.php');
+        require('./view/front/viewConnect.php');
     }
 
     function form_connect()

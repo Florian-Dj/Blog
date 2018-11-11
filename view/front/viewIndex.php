@@ -11,7 +11,7 @@ ob_start();
             while ($data = $req->fetch()) {
                 ?>
                 <div class="post_unique">
-                    <h3><a href="?action=post&post=<?=$data['id']?>"><?= htmlspecialchars($data['title']) ?></a></h3>
+                    <h3><a href="?action=post&post=<?=$data['post_id']?>"><?= htmlspecialchars($data['title']) ?></a></h3>
                     <p>
                         Auteur: <?= htmlspecialchars($data['author'])?><br />
                         Publier le: <?= htmlspecialchars($data['date_create'])?> et mise à jour le: <?= htmlspecialchars($data['date_update'])?><br />

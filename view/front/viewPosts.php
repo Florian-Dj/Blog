@@ -5,10 +5,10 @@ ob_start();
 
     <section id="posts">
         <?php
-        while ($data = $req->fetch()) {
+        while ($data = $posts->fetch()) {
             ?>
             <div id="posts_frame">
-                <h3><a href="?action=post&post=<?=$data['id']?>"><?= htmlspecialchars($data['title']) ?></a></h3>
+                <h3><a href="?action=post&post=<?=$data['post_id']?>"><?= htmlspecialchars($data['title']) ?></a></h3>
                 <p>
                     Auteur: <?= htmlspecialchars($data['author'])?><br />
                     Publier le: <?= htmlspecialchars($data['date_create'])?> et mise à jour le: <?= htmlspecialchars($data['date_update'])?><br />
@@ -20,8 +20,8 @@ ob_start();
                         echo htmlspecialchars($data['text']) . "<br />";
                     }
                     if (!empty($_SESSION['username'])) {
-                        echo '<a href="?action=edit_post&post=' . $data['id'] . '"><button>Editer Post</button></a>';
-                        echo '<a href="?action=delete_post&post=' . $data['id'] . '"><button>Supprimer Post</button></a>';
+                        echo '<a href="?action=edit_post&post=' . $data['post_id'] . '"><button>Editer Post</button></a>';
+                        echo '<a href="?action=delete_post&post=' . $data['post_id'] . '"><button>Supprimer Post</button></a>';
                     }
                     ?>
                 </p>
@@ -35,6 +35,6 @@ ob_start();
     </section>
 
 <?php
-$req->closeCursor();
+$posts->closeCursor();
 $content = ob_get_clean();
 require('template.php');
