@@ -63,7 +63,7 @@
         }
     }
 
-    function editPost($postId)
+    function updatePost($postId)
     {
         $postManager = new \OpenClassRoom\Blog\Model\PostManager();
 
@@ -97,9 +97,18 @@
     }
 
 
-    function delete_comment()
+    function deleteComment($postID, $commentId)
     {
-        $comment = getDelComment();
+        $commentManger = new \OpenClassRoom\Blog\Model\CommentManager();
+
+        $comment = $commentManger->getDelComment($postID, $commentId);
+
+        if ($comment === false) {
+            die('Impossible de supprimer le commentaire !');
+        }
+        else{
+            header('Location: ?action=post&post=' . $_GET['post']);
+        }
     }
 
     function report_comment()

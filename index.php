@@ -40,9 +40,9 @@
                     echo 'Erreur : Aucun identifiant de post envoyé';
                 }
                 break;
-            case 'editPost':
+            case 'updatePost':
                 if (isset($_GET['post']) && $_GET['post'] > 0) {
-                    editPost($_GET['post']);
+                    updatePost($_GET['post']);
                 }
                 else{
                     echo 'Erreur : Aucun identifiant de post envoyé';
@@ -75,16 +75,22 @@
                     echo "Erreur : aucun identifiant de billet envoyé";
                 }
                 break;
-            case 'delete_comment':
-                delete_comment();
+            case 'deleteComment':
+                if (isset($_GET['post']) && $_GET['post'] > 0 && isset($_GET['comment']) && $_GET['comment'] > 0){
+                    deleteComment($_GET['post'], $_GET['comment']);
+                }
+                else{
+                    echo 'Erreur : Aucun identifiant de post ou de commentaire envoyé';
+                }
                 break;
+
             case 'report_comment':
                 report_comment();
                 break;
-
             case 'form_report':
                 form_report();
                 break;
+
             case 'management':
                 management();
                 break;

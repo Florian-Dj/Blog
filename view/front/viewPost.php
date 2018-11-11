@@ -20,7 +20,7 @@ ob_start();
         echo '<p>Auteur : ' . $comment['username'] . ' <em>Publier le :' . $comment['date_create'] . "</em><br />" . $comment['text'] . '<br />';
         echo '<a href="?action=report_comment&post=' . $posts['post_id'] . '&comment=' . $comment['comment_id'] . '"><button>Signaler</button></a><br>';
         if (!empty($_SESSION['username'])) {
-            echo '<a href="?action=delete_comment&post=' .$posts['post_id'] . '&comment=' . $comment['comment_id'] . '"><button>Supprimer le commentaire</button></a>';
+            echo '<a href="?action=deleteComment&post=' .$posts['post_id'] . '&comment=' . $comment['comment_id'] . '"><button>Supprimer le commentaire</button></a>';
         }
     }
     ?>

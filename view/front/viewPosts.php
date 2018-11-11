@@ -20,7 +20,7 @@ ob_start();
                         echo htmlspecialchars($data['text']) . "<br />";
                     }
                     if (!empty($_SESSION['username'])) {
-                        echo '<a href="?action=editPost&post=' . $data['post_id'] . '"><button>Editer Post</button></a>';
+                        echo '<a href="?action=updatePost&post=' . $data['post_id'] . '"><button>Editer Post</button></a>';
                         echo '<a href="?action=deletePost&post=' . $data['post_id'] . '"><button>Supprimer Post</button></a>';
                     }
                     ?>

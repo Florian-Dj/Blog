@@ -1,29 +1,5 @@
 <?php
 
-    function getEditPost()
-    {
-        $db = dbConnect();
-        $post = $db->prepare('UPDATE post SET title = :title, text = :text, date_update = NOW() WHERE post_id = :id');
-        $post->execute(array(
-            'title' => $_POST['title_post'],
-            'text' => $_POST['text_post'],
-            'id' => $_GET['post'],
-        ));
-        header('Location: ?action=post&post=' . $_GET['post']);
-        return $post;
-    }
-
-    function getDelComment()
-    {
-        $db = dbConnect();
-        $comment = $db->prepare('DELETE FROM comment WHERE comment_id = ?');
-        $comment->execute(array($_GET['comment']));
-        $report = $db->prepare('DELETE FROM report WHERE post_id = ?');
-        $report->execute(array($_GET['post']));
-        header('Location: ?action=post&post=' . $_GET['post']);
-        return $comment;
-    }
-
     function getFormReportComment($commentId)
     {
         $db = dbConnect();
