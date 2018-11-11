@@ -37,10 +37,10 @@
         $affectedLines = $commentManager->postComment($postId, $author, $comment);
 
         if ($affectedLines === false) {
-            throw new Exception('Impossible d\'ajouter le commentaire !');
+            die('Impossible d\'ajouter le commentaire !');
         }
         else{
-            header('Location index.php?action=post&id=' . $postId);
+            header('Location: ?action=post&post=' . $postId);
         }
     }
 
@@ -48,14 +48,23 @@
 
 
 
-    function add_post()
+    function addPost()
     {
         require('./view/back/viewAddPost.php');
     }
 
-    function form_add_post()
+    function formAddPost($title, $author, $text)
     {
-        $admin = getAddPost();
+        $postManager = new \OpenClassRoom\Blog\Model\PostManager();
+
+        $affectedLines = $postManager->getAddPost($title, $author, $text);
+
+        if($affectedLines === false){
+            throw new Exception('Impossible d\'ajouter le post !');
+        }
+        else{
+            header('Location index.php?action=posts');
+        }
     }
 
     function delete_post()
@@ -72,11 +81,6 @@
     function form_edit_post()
     {
         $post = getEditPost();
-    }
-
-    function form_comment()
-    {
-        $comment = getAddComment();
     }
 
     function delete_comment()

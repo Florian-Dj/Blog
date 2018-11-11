@@ -9,6 +9,7 @@
             case 'index':
                 index();
                 break;
+
             case 'post':
                 if (isset($_GET['post']) && $_GET['post'] > 0) {
                     post();
@@ -20,20 +21,11 @@
             case 'posts':
                 posts();
                 break;
-            case 'connect':
-                connect();
-                break;
-            case 'form_connect':
-                form_connect();
-                break;
-            case 'disconnect':
-                disconnect();
-                break;
             case 'add_post':
-                add_post();
+                addPost();
                 break;
             case 'form_add_post':
-                form_add_post();
+                formAddPost($_POST['title_post'], $_SESSION['username'], $_POST['text_post']);
                 break;
             case 'delete_post':
                 delete_post();
@@ -44,8 +36,19 @@
             case 'form_edit_post':
                 form_edit_post();
                 break;
-            case 'form_comment':
-                form_comment();
+
+            case 'addComment':
+                if (isset($_GET['post']) && $_GET['post'] > 0){
+                    if (!empty($_POST['username']) && !empty($_POST['text_comment'])) {
+                        addComment($_GET['post'], $_POST['username'], $_POST['text_comment']);
+                    }
+                    else{
+                        echo "Erreur : tous les champs ne sont pas remplis !";
+                    }
+                }
+                else{
+                    echo "Erreur : aucun identifiant de billet envoyé";
+                }
                 break;
             case 'delete_comment':
                 delete_comment();
@@ -53,11 +56,22 @@
             case 'report_comment':
                 report_comment();
                 break;
+
             case 'form_report':
                 form_report();
                 break;
             case 'management':
                 management();
+                break;
+
+            case 'connect':
+                connect();
+                break;
+            case 'form_connect':
+                form_connect();
+                break;
+            case 'disconnect':
+                disconnect();
                 break;
         }
     }
