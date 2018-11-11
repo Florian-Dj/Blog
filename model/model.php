@@ -1,34 +1,4 @@
 <?php
-    function getPostsIndex()
-    {
-        $db = dbConnect();
-        $req = $db->query('SELECT * FROM post ORDER BY date_create DESC LIMIT 0,2');
-        return $req;
-    }
-
-    function getPosts()
-    {
-        $db = dbConnect();
-        $req = $db->query('SELECT * FROM post ORDER BY post_id');
-        return $req;
-    }
-
-    function getPost($postId)
-    {
-        $db = dbConnect();
-        $req = $db->prepare('SELECT * FROM post WHERE post_id = ?');
-        $req->execute(array($postId));
-        $posts = $req->fetch();
-        return $posts;
-    }
-
-    function getComment($postId)
-    {
-        $db = dbConnect();
-        $comments = $db->prepare('SELECT * FROM comment WHERE post_id = ? ORDER BY date_create DESC');
-        $comments->execute(array($postId));
-        return $comments;
-    }
 
     function getAddPost()
     {

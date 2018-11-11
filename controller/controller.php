@@ -5,7 +5,9 @@
 
     function index()
     {
-        $req = getPostsIndex();
+        $postManager = new PostManager();
+        $req = $postManager->getPostsIndex();
+
         require('./view/front/viewIndex.php');
     }
 

@@ -1,7 +1,17 @@
 <?php
 
-class PostManager
+require_once('./model/Manager.php');
+
+class PostManager extends Manager
 {
+
+    public function getPostsIndex()
+    {
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT * FROM post ORDER BY date_create DESC LIMIT 0,2');
+
+        return $req;
+    }
 
     public function getPosts()
     {
@@ -20,17 +30,4 @@ class PostManager
 
         return $posts;
     }
-
-
-    private function dbConnect()
-    {
-        try {
-            $db = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', 'clavier');
-            return $db;
-        }
-        catch (Exception $e) {
-            die('Erreur : ' . $e->getMessage());
-        }
-    }
-
 }
