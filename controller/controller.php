@@ -2,6 +2,7 @@
     require('./model/model.php');
     require('./model/PostManager.php');
     require('./model/CommentManager.php');
+    require ('./model/AdminManager.php');
 
     function index()
     {
@@ -10,7 +11,7 @@
         require('./view/front/viewIndex.php');
     }
 
-    //Management all posts
+    //Management all Posts
     function posts()
     {
         $postsManager = new \OpenClassRoom\Blog\Model\PostManager();
@@ -81,7 +82,7 @@
         header('Location: ?action=post&post=' . $_GET['post']);
     }
 
-    //Management comments
+    //Management Comments
     function addComment($postId, $author, $comment)
     {
         $commentManager = new \OpenClassRoom\Blog\Model\CommentManager();
@@ -95,7 +96,6 @@
             header('Location: ?action=post&post=' . $postId);
         }
     }
-
 
     function deleteComment($postID, $commentId)
     {
@@ -111,6 +111,7 @@
         }
     }
 
+    //Management Reports
     function report_comment()
     {
         $comment = getFormReportComment($_GET['comment']);
@@ -128,15 +129,24 @@
         require('./view/back/viewManagement.php');
     }
 
-
+    //Management Admin
     function connect()
     {
         require('./view/front/viewConnect.php');
     }
 
-    function form_connect()
+    function formConnect()
     {
-        $admin = getConnect();
+        $adminManager = new \OpenClassRoom\Blog\Model\AdminManager();
+
+        $admin = $adminManager->getConnect();
+
+        if($admin === false){
+            die('Impossible de se connect');
+        }
+        else{
+            header('Location: ?action=index');
+        }
     }
 
     function disconnect(){

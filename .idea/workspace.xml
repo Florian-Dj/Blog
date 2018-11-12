@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa47c138-16f3-4715-af6d-1c077e38c5d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bdddbc3e-b3ea-43d4-ae80-0571b75d799a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bdddbc3e-b3ea-43d4-ae80-0571b75d799a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/CommentManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/CommentManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/PostManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/PostManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Manager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/front/viewConnect.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/front/viewConnect.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,16 +49,17 @@
     <session id="1725312593">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="15" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.21" value="2" />
           <entry key="project.open.time.22" value="3" />
+          <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.33" value="1" />
-          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="8" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -64,7 +67,7 @@
           <entry key="SCHEMA:blog" value="3" />
           <entry key="admin" value="1" />
           <entry key="comment" value="2" />
-          <entry key="php" value="84" />
+          <entry key="php" value="86" />
           <entry key="report" value="1" />
           <entry key="sql" value="2" />
         </counts>
@@ -72,14 +75,14 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Database Element" value="4" />
-          <entry key="PHP" value="83" />
+          <entry key="PHP" value="85" />
           <entry key="Scratch" value="3" />
           <entry key="UML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="7872" />
+          <entry key="php" value="8192" />
           <entry key="sql" value="16" />
           <entry key="txt" value="111" />
         </counts>
@@ -87,7 +90,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="3" />
-          <entry key="PHP" value="7869" />
+          <entry key="PHP" value="8189" />
           <entry key="PLAIN_TEXT" value="111" />
           <entry key="SQL" value="16" />
         </counts>
@@ -99,26 +102,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="47" column="69" lean-forward="true" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/controller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1360">
-              <caret line="107" column="9" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
+            <state relative-caret-position="568">
+              <caret line="97" column="27" lean-forward="true" selection-start-line="97" selection-start-column="27" selection-end-line="97" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller/controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/PostManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+            <state relative-caret-position="901">
+              <caret line="53" column="65" selection-start-line="53" selection-start-column="65" selection-end-line="53" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -133,51 +136,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="uml://DATABASE/bdddbc3e-b3ea-43d4-ae80-0571b75d799a.SCHEMA:blog">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>DATABASE</ID>
-              <OriginalElement>bdddbc3e-b3ea-43d4-ae80-0571b75d799a.SCHEMA:blog</OriginalElement>
-              <nodes>
-                <node x="37.75" y="401.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.report</node>
-                <node x="0.0" y="211.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.comment</node>
-                <node x="51.25" y="0.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.post</node>
-                <node x="281.75" y="0.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.admin</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.comment" target="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.post">
-                  <point x="0.0" y="-70.0" />
-                  <point x="88.0" y="186.0" />
-                  <point x="94.25" y="186.0" />
-                  <point x="-43.0" y="80.5" />
-                </edge>
-                <edge source="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.report" target="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.comment">
-                  <point x="-49.75" y="-91.5" />
-                  <point x="0.0" y="70.0" />
-                </edge>
-                <edge source="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.report" target="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.post">
-                  <point x="49.75" y="-91.5" />
-                  <point x="186.5" y="186.0" />
-                  <point x="180.25" y="186.0" />
-                  <point x="43.0" y="80.5" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="1.0" x="-175.5" y="96.5" />
-              <SelectedNodes />
-              <Categories>
-                <Category>Key columns</Category>
-                <Category>Columns</Category>
-              </Categories>
+        <entry file="file://$PROJECT_DIR$/model/AdminManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/front/viewPosts.php">
+        <entry file="file://$PROJECT_DIR$/view/front/viewConnect.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
+            <state relative-caret-position="136">
+              <caret line="8" column="39" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -185,8 +156,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/Manager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -194,8 +165,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="5" selection-start-column="5" selection-end-column="5" />
+            <state relative-caret-position="544">
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -229,16 +200,18 @@
         <option value="$PROJECT_DIR$/view/viewIndex.php" />
         <option value="$PROJECT_DIR$/view/viewEditPost.php" />
         <option value="$PROJECT_DIR$/view/viewPost.php" />
-        <option value="$PROJECT_DIR$/model/Manager.php" />
         <option value="$PROJECT_DIR$/view/back/viewAddPost.php" />
         <option value="$PROJECT_DIR$/view/back/viewEditPost.php" />
         <option value="$PROJECT_DIR$/view/front/viewPosts.php" />
         <option value="$PROJECT_DIR$/view/front/viewPost.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/controller/controller.php" />
-        <option value="$PROJECT_DIR$/model/model.php" />
         <option value="$PROJECT_DIR$/model/CommentManager.php" />
         <option value="$PROJECT_DIR$/model/PostManager.php" />
+        <option value="$PROJECT_DIR$/model/Manager.php" />
+        <option value="$PROJECT_DIR$/model/AdminManager.php" />
+        <option value="$PROJECT_DIR$/view/front/viewConnect.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/model/model.php" />
+        <option value="$PROJECT_DIR$/controller/controller.php" />
       </list>
     </option>
   </component>
@@ -285,6 +258,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -310,7 +284,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -362,18 +335,20 @@
       <workItem from="1541975306552" duration="1794000" />
       <workItem from="1541977114320" duration="1792000" />
       <workItem from="1541978922013" duration="1911000" />
-      <workItem from="1541980849053" duration="1654000" />
+      <workItem from="1541980849053" duration="1791000" />
+      <workItem from="1541982654801" duration="49000" />
+      <workItem from="1542015550492" duration="1047000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57461000" />
+    <option name="totallyTimeSpent" value="58694000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15085287" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15405117" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -503,45 +478,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/front/viewPosts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/Manager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://bdddbc3e-b3ea-43d4-ae80-0571b75d799a/schema/blog/table/comment">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="107" column="9" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="47" column="69" lean-forward="true" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -551,36 +491,55 @@
           <ID>DATABASE</ID>
           <OriginalElement>bdddbc3e-b3ea-43d4-ae80-0571b75d799a.SCHEMA:blog</OriginalElement>
           <nodes>
-            <node x="37.75" y="401.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.report</node>
-            <node x="0.0" y="211.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.comment</node>
-            <node x="51.25" y="0.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.post</node>
-            <node x="281.75" y="0.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.admin</node>
+            <node x="" y="">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.report</node>
+            <node x="" y="">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.comment</node>
+            <node x="" y="">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.post</node>
+            <node x="" y="">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.admin</node>
           </nodes>
           <notes />
-          <edges>
-            <edge source="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.comment" target="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.post">
-              <point x="0.0" y="-70.0" />
-              <point x="88.0" y="186.0" />
-              <point x="94.25" y="186.0" />
-              <point x="-43.0" y="80.5" />
-            </edge>
-            <edge source="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.report" target="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.comment">
-              <point x="-49.75" y="-91.5" />
-              <point x="0.0" y="70.0" />
-            </edge>
-            <edge source="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.report" target="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.post">
-              <point x="49.75" y="-91.5" />
-              <point x="186.5" y="186.0" />
-              <point x="180.25" y="186.0" />
-              <point x="43.0" y="80.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-175.5" y="96.5" />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="229.0" y="292.0" />
           <SelectedNodes />
           <Categories>
             <Category>Key columns</Category>
             <Category>Columns</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/front/viewPosts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Manager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/front/viewConnect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="97" column="27" lean-forward="true" selection-start-line="97" selection-start-column="27" selection-end-line="97" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -593,8 +552,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/PostManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+        <state relative-caret-position="901">
+          <caret line="53" column="65" selection-start-line="53" selection-start-column="65" selection-end-line="53" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/AdminManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
         </state>
       </provider>
     </entry>

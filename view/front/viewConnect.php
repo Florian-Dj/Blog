@@ -5,7 +5,7 @@ ob_start();
 
     <section id="connect">
         <div id="form_connect">
-            <form method="post" action="?action=form_connect">
+            <form method="post" action="?action=formConnect">
                 <p><label for="username">Identifiant</label> : <input type="text" name="username" id="username"></p>
                 <p><label for="password">Mot de passe</label> : <input type="password" name="password" id="password"></p><br>
                 <input type="submit" value="Se connecter">

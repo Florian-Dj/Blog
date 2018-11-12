@@ -98,8 +98,13 @@
             case 'connect':
                 connect();
                 break;
-            case 'form_connect':
-                form_connect();
+            case 'formConnect':
+                if (!empty($_POST['username']) && !empty($_POST['password'])){
+                    formConnect();
+                }
+                else{
+                    echo "Erreur : tous les champs ne sont pas remplis !";
+                }
                 break;
             case 'disconnect':
                 disconnect();

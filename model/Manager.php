@@ -4,6 +4,7 @@ namespace OpenClassRoom\Blog\Model;
 
 class Manager
 {
+
     protected function dbConnect()
     {
         try {
