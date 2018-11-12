@@ -29,8 +29,7 @@ class CommentManager extends Manager
         $db = $this->dbConnect($commentId);
         $comment = $db->prepare('DELETE FROM comment WHERE comment_id = ?');
         $comment->execute(array($commentId));
-        $report = $db->prepare('DELETE FROM report WHERE post_id = ?');
-        $report->execute(array($postId));
+
         return $comment;
     }
 }

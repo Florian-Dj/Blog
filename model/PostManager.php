@@ -47,10 +47,6 @@ class PostManager extends Manager
         $db = $this->dbConnect();
         $post = $db->prepare('DELETE FROM post WHERE post_id = ?');
         $post->execute(array($postId));
-        $comment = $db->prepare('DELETE FROM comment WHERE post_id = ?');
-        $comment->execute(array($postId));
-        $report = $db->prepare('DELETE FROM report WHERE post_id = ?');
-        $report->execute(array($postId));
 
         return $post;
     }
