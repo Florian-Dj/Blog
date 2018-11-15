@@ -21,7 +21,6 @@
         ));
         header('Location: ?action=post&post=' . $_GET['post']);
         return $comment;
-
     }
 
     function getManagement()

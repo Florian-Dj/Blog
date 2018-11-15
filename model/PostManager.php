@@ -1,8 +1,7 @@
 <?php
 
 namespace OpenClassRoom\Blog\Model;
-
-require_once('./model/Manager.php');
+require_once('Manager.php');
 
 class PostManager extends Manager
 {

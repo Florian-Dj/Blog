@@ -1,32 +1,35 @@
 <?php
     session_start();
     require('controller/controller.php');
+    require('controller/PostController.php');
+
+    $postsController = new \OpenClassRoom\Blog\Controller\PostController();
 
     if (isset($_GET['action'])) {
 
         //Voir pour change if et elseif par switch case♦
         switch ($_GET['action']) {
             case 'index':
-                index();
+                $postsController->index();
                 break;
 
             case 'post':
                 if (isset($_GET['post']) && $_GET['post'] > 0) {
-                    post($_GET['post']);
+                    $postsController->post($_GET['post']);
                 }
                 else {
                     echo 'Erreur : Aucun identifiant de post envoyé';
                 }
                 break;
             case 'posts':
-                posts();
+                $postsController->posts();
                 break;
             case 'add_post':
-                addPost();
+                $postsController->addPost();
                 break;
             case 'formAddPost':
                 if (!empty($_POST['title_post']) && !empty($_POST['text_post'])) {
-                    formAddPost($_POST['title_post'], $_SESSION['username'], $_POST['text_post']);
+                    $postsController->formAddPost($_POST['title_post'], $_SESSION['username'], $_POST['text_post']);
                 }
                 else{
                     echo "Erreur : tous les champs ne sont pas remplis !";
@@ -34,7 +37,7 @@
                 break;
             case 'deletePost':
                 if (isset($_GET['post']) && $_GET['post'] > 0){
-                    deletePost($_GET['post']);
+                    $postsController->deletePost($_GET['post']);
                 }
                 else{
                     echo 'Erreur : Aucun identifiant de post envoyé';
@@ -42,7 +45,7 @@
                 break;
             case 'updatePost':
                 if (isset($_GET['post']) && $_GET['post'] > 0) {
-                    updatePost($_GET['post']);
+                    $postsController->updatePost($_GET['post']);
                 }
                 else{
                     echo 'Erreur : Aucun identifiant de post envoyé';
@@ -51,7 +54,7 @@
             case 'formUpdatePost':
                 if (isset($_GET['post']) && $_GET['post'] > 0) {
                     if (!empty($_POST['title_post']) && !empty($_POST['text_post'])) {
-                        formUpdatePost($_GET['post'], $_POST['title_post'], $_POST['text_post']);
+                        $postsController->formUpdatePost($_GET['post'], $_POST['title_post'], $_POST['text_post']);
                     }
                     else{
                         echo "Erreur : tous les champs ne sont pas remplis !";
@@ -112,5 +115,5 @@
         }
     }
     else {
-        index();
+        $postsController->index();
     }
