@@ -1,17 +1,22 @@
 <?php
 
-    function getFormReportComment($commentId)
+namespace OpenClassRoom\Blog\Model;
+require_once('Manager.php');
+
+class ReportManager
+{
+    public function getFormReportComment($commentId)
     {
-        $db = dbConnect();
+        $db = $this->dbConnect();
         $comment = $db->prepare('SELECT * FROM comment WHERE comment_id = ?');
         $comment->execute(array($commentId));
         return $comment->fetch();
     }
 
-    function getReportComment()
+    public function getReportComment()
     {
         $db = dbConnect();
-        $comment = $db->prepare('INSERT INTO report(post_id, comment_id, author_report, text_report, date_report, status) VALUES(:id_post, :id_comment, :author_report, :text_report, NOW(), :status)');
+        $comment = $this->$db->prepare('INSERT INTO report(post_id, comment_id, author_report, text_report, date_report, status) VALUES(:id_post, :id_comment, :author_report, :text_report, NOW(), :status)');
         $comment->execute(array(
             'id_post' => $_GET['post'],
             'id_comment' => $_GET['comment'],
@@ -22,15 +27,4 @@
         header('Location: ?action=post&post=' . $_GET['post']);
         return $comment;
     }
-
-    function dbConnect()
-    {
-        try {
-            $db = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', 'clavier');
-            return $db;
-        }
-
-        catch (Exception $e) {
-            die('Erreur : ' . $e->getMessage());
-        }
-    }
+}

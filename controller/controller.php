@@ -1,18 +1,20 @@
 <?php
-    require('./model/model.php');
     require ('./model/AdminManager.php');
+    require ('./model/ReportManager.php');
 
 
     //Management Reports
     function report_comment()
     {
-        $comment = getFormReportComment($_GET['comment']);
+        $reportManager = new \OpenClassRoom\Blog\Model\ReportManager();
+        $comment = $reportManager->getFormReportComment($_GET['comment']);
         require('./view/back/viewReport.php');
     }
 
     function form_report()
     {
-        $report = getReportComment();
+        $reportManager = new \OpenClassRoom\Blog\Model\ReportManager();
+        $report = $reportManager->getReportComment();
     }
 
     function management()
