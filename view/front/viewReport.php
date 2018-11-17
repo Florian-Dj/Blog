@@ -6,8 +6,8 @@ ob_start();
 <section id="post">
     <h3>Commentaires</h3>
     <?php
-         echo '<p>Auteur : ' . $comment['username'] . ' <em>Publier le :' . $comment['date_create'] . '</em><br />';
-         echo $comment['text'] . '<br />';
+         echo '<p>Auteur : ' . $report['username'] . ' <em>Publier le :' . $report['date_create'] . '</em><br />';
+         echo $report['text'] . '<br />';
      ?>
 
     <form method="post" action="?action=form_report&post=<?=$_GET['post']?>&comment=<?=$_GET['comment']?>">

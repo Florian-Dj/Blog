@@ -3,28 +3,22 @@
 namespace OpenClassRoom\Blog\Model;
 require_once('Manager.php');
 
-class ReportManager
+class ReportManager extends Manager
 {
-    public function getFormReportComment($commentId)
+    public function getReportComment($commentId)
     {
         $db = $this->dbConnect();
-        $comment = $db->prepare('SELECT * FROM comment WHERE comment_id = ?');
-        $comment->execute(array($commentId));
-        return $comment->fetch();
+        $report = $db->prepare('SELECT * FROM comment WHERE comment_id = ?');
+        $report->execute(array($commentId));
+        return $report->fetch();
     }
 
-    public function getReportComment()
+    public function addReportComment($idPost, $idComment, $author_report, $text_report)
     {
-        $db = dbConnect();
-        $comment = $this->$db->prepare('INSERT INTO report(post_id, comment_id, author_report, text_report, date_report, status) VALUES(:id_post, :id_comment, :author_report, :text_report, NOW(), :status)');
-        $comment->execute(array(
-            'id_post' => $_GET['post'],
-            'id_comment' => $_GET['comment'],
-            'author_report' => $_POST['username_report'],
-            'text_report' => $_POST['text_report'],
-            'status' => 'En étude',
-        ));
+        $db = $this->dbConnect();
+        $report = $db->prepare('INSERT INTO report(post_id, comment_id, author_report, text_report, date_report, status) VALUES(?, ?, ?, ?, NOW(), 1)');
+        $report->execute(array($idPost, $idComment, $author_report, $text_report));
         header('Location: ?action=post&post=' . $_GET['post']);
-        return $comment;
+        return $report;
     }
 }

@@ -4,17 +4,17 @@
 
 
     //Management Reports
-    function report_comment()
+    function getReport()
     {
         $reportManager = new \OpenClassRoom\Blog\Model\ReportManager();
-        $comment = $reportManager->getFormReportComment($_GET['comment']);
-        require('./view/back/viewReport.php');
+        $report = $reportManager->getReportComment($_GET['comment']);
+        require('./view/front/viewReport.php');
     }
 
-    function form_report()
+    function addReport($idPost, $idComment, $author_report, $text_report)
     {
         $reportManager = new \OpenClassRoom\Blog\Model\ReportManager();
-        $report = $reportManager->getReportComment();
+        $report = $reportManager->addReportComment($idPost, $idComment, $author_report, $text_report);
     }
 
     function management()

@@ -89,10 +89,10 @@
                 break;
 
             case 'report_comment':
-                report_comment();
+                getReport();
                 break;
             case 'form_report':
-                form_report();
+                addReport($_GET['post'], $_GET['comment'], $_POST['username_report'], $_POST['text_report']);
                 break;
 
             case 'management':
