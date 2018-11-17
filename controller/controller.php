@@ -1,7 +1,7 @@
 <?php
     require('./model/model.php');
-    require('./model/CommentManager.php');
     require ('./model/AdminManager.php');
+    require ('./model/CommentManager.php');
 
     //Management Comments
     function addComment($postId, $author, $comment)

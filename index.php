@@ -7,7 +7,6 @@
 
     if (isset($_GET['action'])) {
 
-        //Voir pour change if et elseif par switch case♦
         switch ($_GET['action']) {
             case 'index':
                 $postsController->index();
@@ -32,7 +31,7 @@
                     $postsController->formAddPost($_POST['title_post'], $_SESSION['username'], $_POST['text_post']);
                 }
                 else{
-                    echo "Erreur : tous les champs ne sont pas remplis !";
+                    echo "Erreur : Tous les champs ne sont pas remplis !";
                 }
                 break;
             case 'deletePost':
@@ -57,7 +56,7 @@
                         $postsController->formUpdatePost($_GET['post'], $_POST['title_post'], $_POST['text_post']);
                     }
                     else{
-                        echo "Erreur : tous les champs ne sont pas remplis !";
+                        echo "Erreur : Tous les champs ne sont pas remplis !";
                     }
                 }
                 else{
@@ -71,11 +70,11 @@
                         addComment($_GET['post'], $_POST['username'], $_POST['text_comment']);
                     }
                     else{
-                        echo "Erreur : tous les champs ne sont pas remplis !";
+                        echo "Erreur : Aous les champs ne sont pas remplis !";
                     }
                 }
                 else{
-                    echo "Erreur : aucun identifiant de billet envoyé";
+                    echo "Erreur : Aucun identifiant de billet envoyé";
                 }
                 break;
             case 'deleteComment':
@@ -106,7 +105,7 @@
                     formConnect();
                 }
                 else{
-                    echo "Erreur : tous les champs ne sont pas remplis !";
+                    echo "Erreur : Tous les champs ne sont pas remplis !";
                 }
                 break;
             case 'disconnect':

@@ -6,7 +6,7 @@ require('./model/PostManager.php');
 class PostController
 {
 
-    function index()
+    public function index()
     {
         $postManager = new \OpenClassRoom\Blog\Model\PostManager();
         $req = $postManager->getPostsIndex();

@@ -1,7 +1,6 @@
 <?php
 
 namespace OpenClassRoom\Blog\Model;
-
 require_once('Manager.php');
 
 class CommentManager extends Manager
@@ -26,7 +25,7 @@ class CommentManager extends Manager
 
     public function getDelComment($postId, $commentId)
     {
-        $db = $this->dbConnect($commentId);
+        $db = $this->dbConnect();
         $comment = $db->prepare('DELETE FROM comment WHERE comment_id = ?');
         $comment->execute(array($commentId));
 

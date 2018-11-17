@@ -1,6 +1,7 @@
 <?php
 
 namespace OpenClassRoom\Blog\Model;
+require_once('Manager.php');
 
 class AdminManager extends Manager
 {
