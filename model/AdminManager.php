@@ -28,4 +28,11 @@ class AdminManager extends Manager
         }
         return $admin;
     }
+
+    public function getManagement()
+    {
+        $db = $this->dbConnect();
+        $management = $db->prepare('SELECT * FROM report ORDER BY  date_report');
+        return $management;
+    }
 }

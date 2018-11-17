@@ -1,36 +1,7 @@
 <?php
     require('./model/model.php');
     require ('./model/AdminManager.php');
-    require ('./model/CommentManager.php');
 
-    //Management Comments
-    function addComment($postId, $author, $comment)
-    {
-        $commentManager = new \OpenClassRoom\Blog\Model\CommentManager();
-
-        $affectedLines = $commentManager->postComment($postId, $author, $comment);
-
-        if ($affectedLines === false) {
-            die('Impossible d\'ajouter le commentaire !');
-        }
-        else{
-            header('Location: ?action=post&post=' . $postId);
-        }
-    }
-
-    function deleteComment($postID, $commentId)
-    {
-        $commentManger = new \OpenClassRoom\Blog\Model\CommentManager();
-
-        $comment = $commentManger->getDelComment($postID, $commentId);
-
-        if ($comment === false) {
-            die('Impossible de supprimer le commentaire !');
-        }
-        else{
-            header('Location: ?action=post&post=' . $_GET['post']);
-        }
-    }
 
     //Management Reports
     function report_comment()
@@ -46,7 +17,8 @@
 
     function management()
     {
-        $management = getManagement();
+        $adminManager = new \OpenClassRoom\Blog\Model\AdminManager();
+        $management = $adminManager->getManagement();
         require('./view/back/viewManagement.php');
     }
 
@@ -59,7 +31,6 @@
     function formConnect()
     {
         $adminManager = new \OpenClassRoom\Blog\Model\AdminManager();
-
         $admin = $adminManager->getConnect();
 
         if($admin === false){

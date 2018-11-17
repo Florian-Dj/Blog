@@ -23,14 +23,6 @@
         return $comment;
     }
 
-    function getManagement()
-    {
-        $db = dbConnect();
-        $management = $db->prepare('SELECT * FROM report');
-        $management->execute(array());
-        return $management;
-    }
-
     function dbConnect()
     {
         try {

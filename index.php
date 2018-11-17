@@ -2,8 +2,10 @@
     session_start();
     require('controller/controller.php');
     require('controller/PostController.php');
+    require('controller/CommentController.php');
 
     $postsController = new \OpenClassRoom\Blog\Controller\PostController();
+    $commentController = new \OpenClassRoom\Blog\Controller\CommentController();
 
     if (isset($_GET['action'])) {
 
@@ -67,7 +69,7 @@
             case 'addComment':
                 if (isset($_GET['post']) && $_GET['post'] > 0){
                     if (!empty($_POST['username']) && !empty($_POST['text_comment'])) {
-                        addComment($_GET['post'], $_POST['username'], $_POST['text_comment']);
+                        $commentController->addComment($_GET['post'], $_POST['username'], $_POST['text_comment']);
                     }
                     else{
                         echo "Erreur : Aous les champs ne sont pas remplis !";
@@ -79,7 +81,7 @@
                 break;
             case 'deleteComment':
                 if (isset($_GET['post']) && $_GET['post'] > 0 && isset($_GET['comment']) && $_GET['comment'] > 0){
-                    deleteComment($_GET['post'], $_GET['comment']);
+                    $commentController->deleteComment($_GET['post'], $_GET['comment']);
                 }
                 else{
                     echo 'Erreur : Aucun identifiant de post ou de commentaire envoyé';
