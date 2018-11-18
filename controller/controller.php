@@ -3,27 +3,13 @@
     require ('./model/ReportManager.php');
 
 
-    //Management Reports
-    function getReport()
-    {
-        $reportManager = new \OpenClassRoom\Blog\Model\ReportManager();
-        $report = $reportManager->getReportComment($_GET['comment']);
-        require('./view/front/viewReport.php');
-    }
-
-    function addReport($idPost, $idComment, $author_report, $text_report)
-    {
-        $reportManager = new \OpenClassRoom\Blog\Model\ReportManager();
-        $report = $reportManager->addReportComment($idPost, $idComment, $author_report, $text_report);
-    }
-
     function management()
     {
         $adminManager = new \OpenClassRoom\Blog\Model\AdminManager();
         $management = $adminManager->getManagement();
+
         require('./view/back/viewManagement.php');
     }
-
     //Management Admin
     function connect()
     {

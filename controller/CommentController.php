@@ -10,7 +10,7 @@ class  CommentController
     {
         $commentManager = new \OpenClassRoom\Blog\Model\CommentManager();
 
-        $affectedLines = $commentManager->postComment($postId, $author, $comment);
+        $affectedLines = $commentManager->addComment($postId, $author, $comment);
 
         if ($affectedLines === false) {
             die('Impossible d\'ajouter le commentaire !');
@@ -24,7 +24,7 @@ class  CommentController
     {
         $commentManger = new \OpenClassRoom\Blog\Model\CommentManager();
 
-        $comment = $commentManger->getDelComment($postID, $commentId);
+        $comment = $commentManger->delComment($commentId);
 
         if ($comment === false) {
             die('Impossible de supprimer le commentaire !');

@@ -975,22 +975,28 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="230" name="date_create">
+    <column id="242" parent="230" name="status_comment">
       <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="243" parent="230" name="date_create">
+      <Position>6</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="243" parent="230" name="comment_ibfk_1">
+    <index id="244" parent="230" name="comment_ibfk_1">
       <ColNames>post_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="244" parent="230" name="PRIMARY">
+    <key id="245" parent="230" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>comment_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="245" parent="230" name="comment_ibfk_1">
+    <foreign-key id="246" parent="230" name="comment_ibfk_1">
       <ColNames>post_id</ColNames>
       <RefSchemaName>blog</RefSchemaName>
       <RefTableName>post</RefTableName>
@@ -998,113 +1004,113 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="246" parent="231" name="post_id">
+    <column id="247" parent="231" name="post_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="231" name="author">
+    <column id="248" parent="231" name="author">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="231" name="title">
+    <column id="249" parent="231" name="title">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="231" name="text">
+    <column id="250" parent="231" name="text">
       <Position>4</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="231" name="date_create">
+    <column id="251" parent="231" name="date_create">
       <Position>5</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="231" name="date_update">
+    <column id="252" parent="231" name="date_update">
       <Position>6</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="252" parent="231" name="id">
+    <index id="253" parent="231" name="id">
       <ColNames>post_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="253" parent="231" name="id">
+    <key id="254" parent="231" name="id">
       <ColNames>post_id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <column id="254" parent="232" name="report_id">
+    <column id="255" parent="232" name="report_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="255" parent="232" name="post_id">
+    <column id="256" parent="232" name="post_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="232" name="comment_id">
+    <column id="257" parent="232" name="comment_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="232" name="author_report">
+    <column id="258" parent="232" name="author_report">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="232" name="text_report">
+    <column id="259" parent="232" name="text_report">
       <Position>5</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="232" name="date_report">
+    <column id="260" parent="232" name="date_report">
       <Position>6</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="232" name="status">
+    <column id="261" parent="232" name="status">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="261" parent="232" name="id">
+    <index id="262" parent="232" name="id">
       <ColNames>report_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="262" parent="232" name="report_post_post_id_fk">
+    <index id="263" parent="232" name="report_post_post_id_fk">
       <ColNames>post_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="263" parent="232" name="report_comment_comment_id_fk">
+    <index id="264" parent="232" name="report_comment_comment_id_fk">
       <ColNames>comment_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="264" parent="232" name="id">
+    <key id="265" parent="232" name="id">
       <ColNames>report_id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <foreign-key id="265" parent="232" name="report_post_post_id_fk">
+    <foreign-key id="266" parent="232" name="report_post_post_id_fk">
       <ColNames>post_id</ColNames>
       <RefSchemaName>blog</RefSchemaName>
       <RefTableName>post</RefTableName>
@@ -1112,7 +1118,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="266" parent="232" name="report_comment_comment_id_fk">
+    <foreign-key id="267" parent="232" name="report_comment_comment_id_fk">
       <ColNames>comment_id</ColNames>
       <RefSchemaName>blog</RefSchemaName>
       <RefTableName>comment</RefTableName>

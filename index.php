@@ -3,9 +3,11 @@
     require('controller/controller.php');
     require('controller/PostController.php');
     require('controller/CommentController.php');
+    require('controller/ReportController.php');
 
     $postsController = new \OpenClassRoom\Blog\Controller\PostController();
     $commentController = new \OpenClassRoom\Blog\Controller\CommentController();
+    $reportController = new \OpenClassRoom\Blog\Controller\ReportController();
 
     if (isset($_GET['action'])) {
 
@@ -89,10 +91,10 @@
                 break;
 
             case 'report_comment':
-                getReport();
+                $reportController->getReport($_GET['comment']);
                 break;
             case 'form_report':
-                addReport($_GET['post'], $_GET['comment'], $_POST['username_report'], $_POST['text_report']);
+                $reportController->addReport($_GET['post'], $_GET['comment'], $_POST['username_report'], $_POST['text_report']);
                 break;
 
             case 'management':
