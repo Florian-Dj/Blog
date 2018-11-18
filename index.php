@@ -1,13 +1,14 @@
 <?php
     session_start();
-    require('controller/controller.php');
     require('controller/PostController.php');
     require('controller/CommentController.php');
     require('controller/ReportController.php');
+    require('controller/AdminController.php');
 
     $postsController = new \OpenClassRoom\Blog\Controller\PostController();
     $commentController = new \OpenClassRoom\Blog\Controller\CommentController();
     $reportController = new \OpenClassRoom\Blog\Controller\ReportController();
+    $adminController = new \OpenClassRoom\Blog\Controller\AdminController();
 
     if (isset($_GET['action'])) {
 
@@ -98,22 +99,22 @@
                 break;
 
             case 'management':
-                management();
+                $adminController->management();
                 break;
 
             case 'connect':
-                connect();
+                $adminController->connect();
                 break;
             case 'formConnect':
                 if (!empty($_POST['username']) && !empty($_POST['password'])){
-                    formConnect();
+                    $adminController->formConnect();
                 }
                 else{
                     echo "Erreur : Tous les champs ne sont pas remplis !";
                 }
                 break;
             case 'disconnect':
-                disconnect();
+                $adminController->disconnect();
                 break;
         }
     }
