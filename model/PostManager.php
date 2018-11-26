@@ -5,7 +5,74 @@ require_once('Manager.php');
 
 class PostManager extends Manager
 {
+    private $_postId;
+    private $_title;
+    private $_author;
+    private $_text;
 
+    //Hydrate
+    public function hydrate(array $data)
+    {
+        foreach ($data as $key => $value) {
+            $method = 'set' . ucfirst($key);
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+    }
+
+    //List getters
+    public function id()
+    {
+        return $this->_postId;
+    }
+
+    public function title()
+    {
+        return $this->_title;
+    }
+
+    public function author()
+    {
+        return $this->_author;
+    }
+
+    public function text()
+    {
+        return $this->_text;
+    }
+
+    //List setters
+    public function setId($postId)
+    {
+        $postId = (int)$postId;
+        if ($postId > 0) {
+            $this->_postId = $postId;
+        }
+    }
+
+    public function setTitle($title)
+    {
+        if (is_string($title)) {
+            $this->_title = $title;
+        }
+    }
+
+    public function setAuthor($author)
+    {
+        if (is_string($author)) {
+            $this->_author = $author;
+        }
+    }
+
+    public function setText($text)
+    {
+        if (is_string($text)) {
+            $this->_text = $text;
+        }
+    }
+
+    //Call SQL
     public function getPostsIndex()
     {
         $db = $this->dbConnect();
@@ -50,13 +117,13 @@ class PostManager extends Manager
         return $post;
     }
 
-    public function getUpdatePost($postId, $postTitle, $postText)
+    public function getUpdatePost($postId, $title, $text)
     {
         $db = $this->dbConnect();
         $post = $db->prepare('UPDATE post SET title = :title, text = :text, date_update = NOW() WHERE post_id = :id');
         $post->execute(array(
-            'title' => $postTitle,
-            'text' => $postText,
+            'title' => $title,
+            'text' => $text,
             'id' => $postId,
         ));
         return $post;

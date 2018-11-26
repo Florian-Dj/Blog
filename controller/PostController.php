@@ -1,7 +1,7 @@
 <?php
 
 namespace OpenClassRoom\Blog\Controller;
-require('./model/PostManager.php');
+require(__DIR__ . '/../model/PostManager.php');
 
 class PostController
 {
@@ -10,7 +10,7 @@ class PostController
     {
         $postManager = new \OpenClassRoom\Blog\Model\PostManager();
         $req = $postManager->getPostsIndex();
-        require('./view/front/viewIndex.php');
+        require(__DIR__ . '/../view/front/viewIndex.php');
     }
 
 
