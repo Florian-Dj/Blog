@@ -81,7 +81,7 @@
             case 'addComment':
                 if (isset($_GET['post']) && $_GET['post'] > 0){
                     if (!empty($_POST['username']) && !empty($_POST['text_comment'])) {
-                        $commentController->addComment($_GET['post'], $_POST['username'], $_POST['text_comment']);
+                        $commentController->addComment($_GET['post'], $_POST['username'], nl2br($_POST['text_comment']));
                     }
                     else{
                         echo "Erreur : Aous les champs ne sont pas remplis !";
