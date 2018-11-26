@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa47c138-16f3-4715-af6d-1c077e38c5d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/front/viewReport.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/front/viewReport.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +66,7 @@
           <entry key="admin" value="1" />
           <entry key="comment" value="3" />
           <entry key="css" value="2" />
-          <entry key="php" value="124" />
+          <entry key="php" value="126" />
           <entry key="report" value="1" />
           <entry key="sql" value="2" />
         </counts>
@@ -75,7 +75,7 @@
         <counts>
           <entry key="CSS" value="2" />
           <entry key="Database Element" value="5" />
-          <entry key="PHP" value="123" />
+          <entry key="PHP" value="125" />
           <entry key="Scratch" value="3" />
           <entry key="UML" value="4" />
         </counts>
@@ -83,7 +83,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="2" />
-          <entry key="php" value="11210" />
+          <entry key="php" value="11289" />
           <entry key="sql" value="16" />
           <entry key="txt" value="111" />
         </counts>
@@ -92,7 +92,7 @@
         <counts>
           <entry key="CSS" value="2" />
           <entry key="HTML" value="3" />
-          <entry key="PHP" value="11207" />
+          <entry key="PHP" value="11286" />
           <entry key="PLAIN_TEXT" value="111" />
           <entry key="SQL" value="16" />
         </counts>
@@ -101,10 +101,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="-129">
               <caret line="69" column="113" selection-start-line="69" selection-start-column="113" selection-end-line="69" selection-end-column="113" />
             </state>
           </provider>
@@ -149,8 +149,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/front/viewPost.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+            <state relative-caret-position="340">
+              <caret line="20" column="148" selection-start-line="20" selection-start-column="148" selection-end-line="20" selection-end-column="207" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/front/viewReport.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="33" column="137" selection-start-line="33" selection-start-column="137" selection-end-line="33" selection-end-column="137" />
+              <folding>
+                <element signature="e#123#289#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/ReportManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -214,7 +235,6 @@
         <option value="$PROJECT_DIR$/view/front/viewManagement.php" />
         <option value="$PROJECT_DIR$/model/model.php" />
         <option value="$PROJECT_DIR$/view/back/viewReport.php" />
-        <option value="$PROJECT_DIR$/view/front/viewReport.php" />
         <option value="$PROJECT_DIR$/controller/CommentController.php" />
         <option value="$PROJECT_DIR$/view/back/viewManagement.php" />
         <option value="$PROJECT_DIR$/model/ReportManager.php" />
@@ -233,6 +253,7 @@
         <option value="$PROJECT_DIR$/view/front/viewPosts.php" />
         <option value="$PROJECT_DIR$/view/front/viewPost.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/view/front/viewReport.php" />
       </list>
     </option>
   </component>
@@ -429,12 +450,12 @@
       <workItem from="1542622169973" duration="2039000" />
       <workItem from="1542640263804" duration="599000" />
       <workItem from="1543234761212" duration="2496000" />
-      <workItem from="1543260741370" duration="7468000" />
+      <workItem from="1543260741370" duration="8293000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98419000" />
+    <option name="totallyTimeSpent" value="99244000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -580,13 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/front/viewReport.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/front/viewManagement.php" />
     <entry file="file://$PROJECT_DIR$/controller/controller.php" />
     <entry file="file://$PROJECT_DIR$/view/back/viewManagement.php">
@@ -617,13 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/ReportManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/AdminManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -642,13 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="755">
           <caret line="4" column="69076" lean-forward="true" selection-start-line="4" selection-start-column="69076" selection-end-line="4" selection-end-column="69076" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/front/template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="76" selection-start-line="7" selection-start-column="76" selection-end-line="7" selection-end-column="76" />
         </state>
       </provider>
     </entry>
@@ -715,17 +715,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/front/viewPost.php">
+    <entry file="file://$PROJECT_DIR$/view/front/template.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        <state relative-caret-position="119">
+          <caret line="7" column="76" selection-start-line="7" selection-start-column="76" selection-end-line="7" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/ReportManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="-129">
           <caret line="69" column="113" selection-start-line="69" selection-start-column="113" selection-end-line="69" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/front/viewPost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="148" selection-start-line="20" selection-start-column="148" selection-end-line="20" selection-end-column="207" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/front/viewReport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="137" selection-start-line="33" selection-start-column="137" selection-end-line="33" selection-end-column="137" />
+          <folding>
+            <element signature="e#123#289#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

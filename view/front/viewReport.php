@@ -5,16 +5,38 @@ ob_start();
 
 <section id="post">
     <h3>Commentaires</h3>
+
     <?php
-         echo '<p>Auteur : ' . $report['username'] . ' <em>Publier le :' . $report['date_create'] . '</em><br />';
+    /*
+         echo '<p>Auteur : ' . $report['username'] . '<em>Publier le : ' . $report['date_create'] . '</em><br />';
          echo $report['text'] . '<br />';
+    */
      ?>
 
-    <form method="post" action="?action=form_report&post=<?=$_GET['post']?>&comment=<?=$_GET['comment']?>">
-        <p><label for="username_report">Nom</label> : <input type="text" name="username_report" id="username_report"></p>
-        <p><label for="text_report">Texte du signalement</label> : <textarea name="text_report" id="text_report"></textarea></p>
-        <input type="submit" value="Envoyer">
+    <form class="form-horizontal" method="post" action="?action=form_report&post=<?=$_GET['post']?>&comment=<?=$_GET['comment']?>">
+        <fieldset>
+            <legend>Envoyer Signalement</legend>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="username_report">Nom</label>
+                <div class="col-md-3">
+                    <input name="username_report" class="form-control input-md" id="username_report" required="" type="text" placeholder="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="text_report">Texte Signalement</label>
+                <div class="col-md-5">
+                    <textarea name="text_report" class="form-control" rows="6" id="text_report"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="submit"></label>
+                <div class="col-md-4">
+                    <button name="submit" class="btn btn-warning" id="submit"><span class="glyphicon glyphicon-exclamation-sign"></span> Envoyer Signalement</button>
+                </div>
+            </div>
+        </fieldset>
     </form>
+
 </section>
 
 <?php
