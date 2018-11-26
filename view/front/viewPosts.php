@@ -14,7 +14,7 @@ ob_start();
                     Publier le: <?= htmlspecialchars($data['date_create'])?> et mise à jour le: <?= htmlspecialchars($data['date_update'])?><br />
                     <?php
                     if (strlen($data['text']) > 120) {
-                        echo htmlspecialchars(substr($data['text'], 0, 150)) . "...<br />";
+                        echo htmlspecialchars(substr($data['text'], 0, 140)) . "...<br />";
                     }
                     else{
                         echo htmlspecialchars($data['text']) . "<br />";

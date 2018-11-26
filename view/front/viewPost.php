@@ -18,7 +18,7 @@ ob_start();
     while ($comment = $comments->fetch())
     {
         echo '<p>Auteur : ' . $comment['username'] . ' <em>Publier le :' . $comment['date_create'] . "</em><br />" . $comment['text'] . '<br />';
-        echo '<a href="?action=report_comment&post=' . $posts['post_id'] . '&comment=' . $comment['comment_id'] . '" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-exclamation-sign"></span> Signaler</a><br>';
+        echo '<a href="?action=report_comment&post=' . $posts['post_id'] . '&comment=' . $comment['comment_id'] . '" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-exclamation-sign"></span> Signaler</a>';
         if (!empty($_SESSION['username'])) {
             echo '<a href="?action=deleteComment&post=' .$posts['post_id'] . '&comment=' . $comment['comment_id'] . '" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-remove-sign"></span> Supprimer commentaire</a>';
         }
@@ -30,14 +30,14 @@ ob_start();
             <legend>Ajouter un commentaire</legend>
             <div class="form-group">
                 <label class="col-md-1 control-label" for="username">Nom</label>
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <input name="username" class="form-control input-md" id="username" required="" type="text" placeholder="">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-1 control-label" for="text_comment">Texte</label>
-                <div class="col-md-6">
-                    <textarea name="text_comment" class="form-control" rows="6" id="text_comment"></textarea>
+                <div class="col-md-4">
+                    <textarea name="text_comment" class="form-control" rows="3" id="text_comment"></textarea>
                 </div>
             </div>
             <div class="form-group">
