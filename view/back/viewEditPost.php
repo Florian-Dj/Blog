@@ -21,7 +21,7 @@ ob_start();
                 <div class="form-group">
                     <label class="col-md-2 control-label" for="submit"></label>
                     <div class="col-md-4">
-                        <button name="submit" class="btn btn-success" id="submit">Editer Billet</button>
+                        <button name="submit" class="btn btn-success" id="submit"><span class="glyphicon glyphicon-edit"></span> Editer Billet</button>
                     </div>
                 </div>
             </fieldset>

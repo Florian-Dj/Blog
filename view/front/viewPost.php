@@ -43,7 +43,7 @@ ob_start();
             <div class="form-group">
                 <label class="col-md-1 control-label" for="submit"></label>
                 <div class="col-md-4">
-                    <button name="submit" class="btn btn-info" id="submit">Ajouter commentaires</button>
+                    <button name="submit" class="btn btn-info" id="submit"><span class="glyphicon glyphicon-bullhorn"></span> Ajouter commentaires</button>
                 </div>
             </div>
         </fieldset>
