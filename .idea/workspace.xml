@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa47c138-16f3-4715-af6d-1c077e38c5d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/view/back/viewEditPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/back/viewEditPost.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/front/viewPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/front/viewPost.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/back/viewAddPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/back/viewAddPost.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +66,7 @@
           <entry key="admin" value="1" />
           <entry key="comment" value="3" />
           <entry key="css" value="2" />
-          <entry key="php" value="118" />
+          <entry key="php" value="119" />
           <entry key="report" value="1" />
           <entry key="sql" value="2" />
         </counts>
@@ -76,7 +75,7 @@
         <counts>
           <entry key="CSS" value="2" />
           <entry key="Database Element" value="5" />
-          <entry key="PHP" value="117" />
+          <entry key="PHP" value="118" />
           <entry key="Scratch" value="3" />
           <entry key="UML" value="4" />
         </counts>
@@ -84,7 +83,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="2" />
-          <entry key="php" value="11098" />
+          <entry key="php" value="11109" />
           <entry key="sql" value="16" />
           <entry key="txt" value="111" />
         </counts>
@@ -93,7 +92,7 @@
         <counts>
           <entry key="CSS" value="2" />
           <entry key="HTML" value="3" />
-          <entry key="PHP" value="11095" />
+          <entry key="PHP" value="11106" />
           <entry key="PLAIN_TEXT" value="111" />
           <entry key="SQL" value="16" />
         </counts>
@@ -150,13 +149,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/front/viewPosts.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+            <state relative-caret-position="527">
+              <caret line="31" column="127" selection-start-line="31" selection-start-column="81" selection-end-line="31" selection-end-column="127" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/front/viewPost.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="731">
@@ -165,11 +164,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/back/viewEditPost.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/back/viewAddPost.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+            <state relative-caret-position="374">
+              <caret line="22" column="121" selection-start-line="22" selection-start-column="121" selection-end-line="22" selection-end-column="121" />
             </state>
           </provider>
         </entry>
@@ -228,7 +227,6 @@
         <option value="$PROJECT_DIR$/view/viewIndex.php" />
         <option value="$PROJECT_DIR$/view/viewEditPost.php" />
         <option value="$PROJECT_DIR$/view/viewPost.php" />
-        <option value="$PROJECT_DIR$/view/back/viewAddPost.php" />
         <option value="$PROJECT_DIR$/model/Manager.php" />
         <option value="$PROJECT_DIR$/view/front/viewConnect.php" />
         <option value="$PROJECT_DIR$/model/AdminManager.php" />
@@ -252,6 +250,7 @@
         <option value="$PROJECT_DIR$/view/front/header.php" />
         <option value="$PROJECT_DIR$/view/back/viewEditPost.php" />
         <option value="$PROJECT_DIR$/view/front/viewPost.php" />
+        <option value="$PROJECT_DIR$/view/back/viewAddPost.php" />
       </list>
     </option>
   </component>
@@ -448,12 +447,12 @@
       <workItem from="1542622169973" duration="2039000" />
       <workItem from="1542640263804" duration="599000" />
       <workItem from="1543234761212" duration="2496000" />
-      <workItem from="1543260741370" duration="4725000" />
+      <workItem from="1543260741370" duration="4939000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95676000" />
+    <option name="totallyTimeSpent" value="95890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -599,13 +598,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/model.php" />
-    <entry file="file://$PROJECT_DIR$/view/back/viewAddPost.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://bdddbc3e-b3ea-43d4-ae80-0571b75d799a/schema/blog/table/comment">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -713,13 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/front/viewPosts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/front/template.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -745,6 +730,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/front/viewPosts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="127" selection-start-line="31" selection-start-column="81" selection-end-line="31" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/back/viewAddPost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="121" selection-start-line="22" selection-start-column="121" selection-end-line="22" selection-end-column="121" />
         </state>
       </provider>
     </entry>

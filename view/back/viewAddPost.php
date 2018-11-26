@@ -2,14 +2,30 @@
 $title = 'J.Forteroche | Posts';
 ob_start();
 ?>
+    <form class="form-horizontal" method="post" action="?action=formAddPost">
+    <fieldset>
+        <legend>Ajouter billet</legend>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="title_post">Titre Billet</label>
+            <div class="col-md-4">
+                <input name="title_post" class="form-control input-md" id="title_post" required="" type="text" placeholder="Episode 1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="text_post">Texte du billet</label>
+            <div class="col-md-8">
+                <textarea name="text_post" class="form-control" rows="20" id="text_post"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="submit"></label>
+            <div class="col-md-4">
+                <button name="submit" class="btn btn-primary" id="submit"><span class="glyphicon glyphicon-book"></span> Ajouter Billet</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
 
-    <section id="posts">
-        <form method="post" action="?action=formAddPost">
-            <p><label for="title_post">Titres Episode</label> : <input type="text" name="title_post" id="title_post"></p>
-            <p><label for="text_post">Texte de l'episode</label> : <textarea name="text_post" id="text_post"></textarea></p>
-            <input type="submit" value="Ajouter Episode">
-        </form>
-    </section>
 
 <?php
 $content = ob_get_clean();
