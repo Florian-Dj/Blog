@@ -29,19 +29,19 @@ ob_start();
         <fieldset>
             <legend>Ajouter un commentaire</legend>
             <div class="form-group">
-                <label class="col-md-4 control-label" for="username">Nom</label>
+                <label class="col-md-1 control-label" for="username">Nom</label>
                 <div class="col-md-4">
                     <input name="username" class="form-control input-md" id="username" required="" type="text" placeholder="">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-4 control-label" for="text_comment">Texte</label>
-                <div class="col-md-4">
-                    <textarea name="text_comment" class="form-control" id="text_comment"></textarea>
+                <label class="col-md-1 control-label" for="text_comment">Texte</label>
+                <div class="col-md-6">
+                    <textarea name="text_comment" class="form-control" rows="6" id="text_comment"></textarea>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-4 control-label" for="submit"></label>
+                <label class="col-md-1 control-label" for="submit"></label>
                 <div class="col-md-4">
                     <button name="submit" class="btn btn-info" id="submit">Ajouter commentaires</button>
                 </div>
