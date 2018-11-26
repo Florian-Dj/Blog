@@ -20,8 +20,8 @@ ob_start();
                         echo htmlspecialchars($data['text']) . "<br />";
                     }
                     if (!empty($_SESSION['username'])) {
-                        echo '<a href="?action=updatePost&post=' . $data['post_id'] . '"><button>Editer Post</button></a>';
-                        echo '<a href="?action=deletePost&post=' . $data['post_id'] . '"><button>Supprimer Post</button></a>';
+                        echo '<a href="?action=updatePost&post=' . $data['post_id'] . '" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-edit"></span> Editer Post</a>';
+                        echo '<a href="?action=deletePost&post=' . $data['post_id'] . '" class="btn btn-sm btn-danger">Supprimer Post <span class="glyphicon glyphicon-remove-sign"></span></a>';
                     }
                     ?>
                 </p>
@@ -29,7 +29,7 @@ ob_start();
             <?php
         }
         if (!empty($_SESSION['username'])) {
-            echo '<br/><a href="?action=add_post"><button>Ajouter un Post</button></a>';
+            echo '<br/><a href="?action=add_post" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-book"></span> Ajouter Post</a>';
         }
         ?>
     </section>

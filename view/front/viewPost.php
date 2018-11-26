@@ -3,7 +3,7 @@ $title = 'J.Forteroche | ' . $posts['title'];
 ob_start();
 ?>
 
-<section id="post">
+<section class="col-lg-12">
     <div class="post_frame">
         <h3><?= htmlspecialchars($posts['title']) ?></h3>
         <p>
@@ -18,20 +18,37 @@ ob_start();
     while ($comment = $comments->fetch())
     {
         echo '<p>Auteur : ' . $comment['username'] . ' <em>Publier le :' . $comment['date_create'] . "</em><br />" . $comment['text'] . '<br />';
-        echo '<a href="?action=report_comment&post=' . $posts['post_id'] . '&comment=' . $comment['comment_id'] . '"><button>Signaler</button></a><br>';
+        echo '<a href="?action=report_comment&post=' . $posts['post_id'] . '&comment=' . $comment['comment_id'] . '" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-exclamation-sign"></span> Signaler</a><br>';
         if (!empty($_SESSION['username'])) {
-            echo '<a href="?action=deleteComment&post=' .$posts['post_id'] . '&comment=' . $comment['comment_id'] . '"><button>Supprimer le commentaire</button></a>';
+            echo '<a href="?action=deleteComment&post=' .$posts['post_id'] . '&comment=' . $comment['comment_id'] . '" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-remove-sign"></span> Supprimer commentaire</a>';
         }
     }
     ?>
 
-    <div id="comment_add">
-        <form method="post" action="?action=addComment&post=<?= $_GET['post']?>">
-            <p><label for="username">Nom</label> <input type="text" name="username" id="username"></p>
-            <p><label for="text_comment">Texte</label> <textarea name="text_comment" id="text_comment"></textarea></p><br>
-            <input type="submit" value="Ajouter Commentaire">
-        </form>
-    </div>
+    <form class="form-horizontal" method="post" action="?action=addComment&post=<?= $_GET['post']?>">
+        <fieldset>
+            <legend>Ajouter un commentaire</legend>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="username">Nom</label>
+                <div class="col-md-4">
+                    <input name="username" class="form-control input-md" id="username" required="" type="text" placeholder="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="text_comment">Texte</label>
+                <div class="col-md-4">
+                    <textarea name="text_comment" class="form-control" id="text_comment"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="submit"></label>
+                <div class="col-md-4">
+                    <button name="submit" class="btn btn-info" id="submit">Ajouter commentaires</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
 </section>
 
 <?php
