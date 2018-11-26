@@ -76,7 +76,7 @@ class PostManager extends Manager
     public function getPostsIndex()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT * FROM post ORDER BY date_create DESC LIMIT 0,2');
+        $req = $db->query('SELECT * FROM post ORDER BY date_create DESC LIMIT 0,3');
 
         return $req;
     }

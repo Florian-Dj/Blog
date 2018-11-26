@@ -14,10 +14,10 @@ ob_start();
                     Publier le: <?= htmlspecialchars($data['date_create'])?> et mise à jour le: <?= htmlspecialchars($data['date_update'])?><br />
                     <?php
                     if (strlen($data['text']) > 120) {
-                        echo htmlspecialchars(substr($data['text'], 0, 140)) . "...<br />";
+                        echo (substr($data['text'], 0, 140)) . "...<br />";
                     }
                     else{
-                        echo htmlspecialchars($data['text']) . "<br />";
+                        echo ($data['text']) . "<br />";
                     }
                     if (!empty($_SESSION['username'])) {
                         echo '<a href="?action=updatePost&post=' . $data['post_id'] . '" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-edit"></span> Editer Post</a>';

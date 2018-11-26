@@ -42,7 +42,7 @@
                 break;
             case 'formAddPost':
                 if (!empty($_POST['title_post']) && !empty($_POST['text_post'])) {
-                    $postsController->formAddPost($_POST['title_post'], $_SESSION['username'], $_POST['text_post']);
+                    $postsController->formAddPost($_POST['title_post'], $_SESSION['username'], nl2br($_POST['text_post']));
                 }
                 else{
                     echo "Erreur : Tous les champs ne sont pas remplis !";
@@ -67,7 +67,7 @@
             case 'formUpdatePost':
                 if (isset($_GET['post']) && $_GET['post'] > 0) {
                     if (!empty($_POST['title_post']) && !empty($_POST['text_post'])) {
-                        $postsController->formUpdatePost($_GET['post'], $_POST['title_post'], $_POST['text_post']);
+                        $postsController->formUpdatePost($_GET['post'], $_POST['title_post'], nl2br($_POST['text_post']));
                     }
                     else{
                         echo "Erreur : Tous les champs ne sont pas remplis !";

@@ -9,7 +9,7 @@ ob_start();
         <p>
             Auteur: <?= htmlspecialchars($posts['author'])?><br />
             Publier le: <?= htmlspecialchars($posts['date_create'])?> et mise à jour le: <?= htmlspecialchars($posts['date_update'])?><br />
-            <?= htmlspecialchars($posts['text']) ?>
+            <?= ($posts['text']) ?>
         </p>
     </div>
 
