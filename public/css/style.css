@@ -1,0 +1,57 @@
+section{
+    padding-top: 70px;
+}
+
+
+/*Gestion Page Posts*/
+#posts div div{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#posts h3{
+    font-size: 1.8em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#posts p{
+    text-align: justify;
+    font-size: 1.25em;
+    margin-bottom: 20px;
+}
+
+#posts .author{
+    font-style: italic;
+    font-size: 1em;
+}
+
+.add_post{
+    margin-top: 25px;
+}
+
+/*Gestion des Pages Post*/
+.post_frame h3{
+    font-size: 2.25em;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.comment_box h4{
+    font-size: 2em;
+}
+
+.post_frame .post{
+    margin-top: 40px;
+    font-size: 1.24em;
+}
+
+.comment_box{
+    margin-top: 40px;
+}
+
+.comment{
+    margin-top: 50px;
+}

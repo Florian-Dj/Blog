@@ -4,8 +4,7 @@ ob_start();
 ?>
 
 <section id="post">
-    <h3>Commentaires</h3>
-
+    <h4>Commentaires</h4>
     <?php
     /*
          echo '<p>Auteur : ' . $report['username'] . '<em>Publier le : ' . $report['date_create'] . '</em><br />';
