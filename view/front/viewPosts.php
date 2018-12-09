@@ -24,13 +24,14 @@ ob_start();
                         }
                         ?>
                     </p>
+                    <a href="?action=post&post=<?=$data['post_id']?>" class="btn btn-lg btn-default">Lire la suite</a><br/>
                         <?php
                         if (!empty($_SESSION['username'])) {
                             echo '<a href="?action=updatePost&post=' . $data['post_id'] . '" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-edit"></span> Editer Post</a>';
                             echo '<a href="?action=deletePost&post=' . $data['post_id'] . '" class="btn btn-sm btn-danger">Supprimer Post <span class="glyphicon glyphicon-remove-sign"></span></a>';
                         }
                         ?>
-                    <a href="?action=post&post=<?=$data['post_id']?>" class="btn btn-lg btn-default">Lire la suite</a>
+
                     </p>
                 </div>
                 <?php

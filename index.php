@@ -70,6 +70,7 @@
                 }
                 break;
 
+            /*Gestion des Commentaires*/
             case 'addComment':
                 if (isset($_GET['post']) && $_GET['post'] > 0){
                     if (!empty($_POST['username']) && !empty($_POST['text_comment'])) {
@@ -86,14 +87,18 @@
             case 'deleteComment':
                 if (isset($_GET['post']) && $_GET['post'] > 0 && isset($_GET['comment']) && $_GET['comment'] > 0){
                     $commentController->deleteComment($_GET['post'], $_GET['comment']);
+                    break;
                 }
                 else{
                     echo 'Erreur : Aucun identifiant de post ou de commentaire envoyé';
                 }
                 break;
 
+            /*Gestion des Repports*/
             case 'report_comment':
-                $reportController->formReport($_GET['comment']);
+                if (isset($_GET['post']) && $_GET['post'] > 0 && isset($_GET['comment']) && $_GET['comment'] > 0 ){
+                    $reportController->formReport($_GET['comment']);
+                }
                 break;
             case 'form_report':
                 $reportController->addReport($_GET['post'], $_GET['comment'], $_POST['username_report'], $_POST['text_report']);
@@ -103,6 +108,7 @@
                 $adminController->management();
                 break;
 
+            /*Gestion de Connexion*/
             case 'connect':
                 $adminController->connect();
                 break;

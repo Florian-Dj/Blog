@@ -8,10 +8,10 @@ class ReportManager extends Manager
     public function formReport($idComment)
     {
         $db = $this->dbConnect();
-        $reports = $db->prepare('SELECT * FROM comment WHERE report_comment = true, comment_id = ?');
-        $reports->execute(array($idComment));
+        $comments = $db->prepare('SELECT * FROM comment WHERE comment_id = ?');
+        $comments->execute(array($idComment));
 
-        return $reports;
+        return $comments;
     }
 
     public function addReport($idPost, $idComment, $author_report, $text_report)

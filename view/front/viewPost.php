@@ -13,11 +13,12 @@ ob_start();
 
         <div class="col-lg-12 comment_box">
             <h4>Commentaires</h4>
-            <div class="comment">
+            <div class="comment col-lg-8 col-lg-offset-1">
                 <?php
                 while ($comment = $comments->fetch())
                 {
-                    echo '<p>Auteur : ' . $comment['username'] . ' <em>Publier le :' . $comment['date_create'] . "</em><br />" . $comment['text'] . '<br />';
+                    echo '<p><em>Auteur : ' . $comment['username'] . '<br/>Publier le :' . $comment['date_create'] . '</em></p>';
+                    echo '<p class="comment_text">' . $comment['text'] . '</p>';
                     echo '<a href="?action=report_comment&post=' . $posts['post_id'] . '&comment=' . $comment['comment_id'] . '" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-exclamation-sign"></span> Signaler</a>';
                     if (!empty($_SESSION['username'])) {
                         echo '<a href="?action=deleteComment&post=' .$posts['post_id'] . '&comment=' . $comment['comment_id'] . '" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-remove-sign"></span> Supprimer commentaire</a>';
@@ -26,23 +27,23 @@ ob_start();
                 ?>
             </div>
 
-            <form class="form-horizontal" method="post" action="?action=addComment&post=<?= $_GET['post']?>">
+            <form class="form-horizontal col-lg-6" method="post" action="?action=addComment&post=<?= $_GET['post']?>">
                 <fieldset>
                     <legend>Ajouter un commentaire</legend>
                     <div class="form-group">
-                        <label class="col-md-1 control-label" for="username">Nom</label>
-                        <div class="col-md-2">
+                        <label class="col-md-2 control-label" for="username">Nom :</label>
+                        <div class="col-md-8">
                             <input name="username" class="form-control input-md" id="username" required="" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-1 control-label" for="text_comment">Texte</label>
-                        <div class="col-md-4">
-                            <textarea name="text_comment" class="form-control" rows="3" id="text_comment"></textarea>
+                        <label class="col-md-2 control-label" for="text_comment">Texte :</label>
+                        <div class="col-md-8">
+                            <textarea name="text_comment" class="form-control" rows="5" id="text_comment"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-1 control-label" for="submit"></label>
+                        <label class="col-md-2 control-label" for="submit"></label>
                         <div class="col-md-4">
                             <button name="submit" class="btn btn-info" id="submit"><span class="glyphicon glyphicon-bullhorn"></span> Ajouter commentaires</button>
                         </div>

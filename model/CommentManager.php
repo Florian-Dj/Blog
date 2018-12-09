@@ -12,6 +12,7 @@ class CommentManager extends Manager
     private $_reportComment;
 
     //Constructor
+    /*
     public function __construct($_commentId, $_post_Id, $_username, $_text, $_reportComment)
     {
         $this->_commentId = $_commentId;
@@ -20,6 +21,7 @@ class CommentManager extends Manager
         $this->_text = $_text;
         $this->_reportComment = $_reportComment;
     }
+    */
 
     //Hydrate
     public function hydrate(array $data)
@@ -90,7 +92,7 @@ class CommentManager extends Manager
     public function addComment($postId, $author, $comment)
     {
         $db = $this->dbConnect();
-        $comments = $db->prepare('INSERT INTO comment(post_id, username, text, report_comment, date_create) VALUES(?, ?, ?, false, NOW())');
+        $comments = $db->prepare('INSERT INTO comment(post_id, username, text, date_create) VALUES(?, ?, ?, NOW())');
         $affectedLines = $comments->execute(array($postId, $author, $comment));
 
         return $affectedLines;
