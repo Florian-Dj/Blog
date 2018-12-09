@@ -1,10 +1,12 @@
 <nav class="navbar">
     <div class="container-fluid row">
-        <h1 class="col-lg-5">Jean FORTEROCHE</h1>
-        <h2 class="col-lg-3">Acteur / Ecrivain</h2>
+        <div class="col-lg-7">
+            <h1 class="col-lg-6">Jean FORTEROCHE</h1>
+            <h2 class="col-lg-4">Acteur / Ecrivain</h2>
+        </div>
         <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="./index.php">Accueil</a></li>
-            <li><a href="?action=posts">Posts</a></li>
+            <li><a href="?action=posts">Billets</a></li>
             <?php
             if (!empty($_SESSION['username'])) {
                 echo '<li><a href="?action=management">Gestion</a></li>';

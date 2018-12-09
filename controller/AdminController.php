@@ -9,7 +9,6 @@ class AdminController
     {
         $adminManager = new \OpenClassRoom\Blog\Model\AdminManager();
         $management_report = $adminManager->getManagementReport();
-        //$management_comment = $adminManager->getManagementComment(intval(15);
 
         require(__DIR__ . '/../view/back/viewManagement.php');
     }

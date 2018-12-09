@@ -34,17 +34,7 @@ class AdminManager extends Manager
     public function getManagementReport()
     {
         $db = $this->dbConnect();
-        $management_report = $db->query('SELECT * FROM report ORDER BY date_report');
+        $management_report = $db->query('SELECT report.*, comment.username, comment.text FROM report,comment WHERE comment.comment_id = report.comment_id  ORDER BY date_report');
         return $management_report;
     }
-/*
-    public function getManagementComment($id)
-    {
-        $db = $this->dbConnect();
-        $management_comment = $db->prepare('SELECT * FROM comment WHERE comment_id = ?');
-        $management_comment->execute(array($id));
-        return $management_comment;
-    }
-*/
-
 }

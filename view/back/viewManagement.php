@@ -20,8 +20,8 @@ ob_start();
                 ?>
                 <tr>
                     <td><a href="?action=post&post=<?=$report['post_id']?>" target="_blank"><?=$report['post_id']?></a></td>
-                    <td>Auteur</td>
-                    <td>Texte</td>
+                    <td><?=$report['username']?></td>
+                    <td><?=$report['text']?></td>
                     <td><?=$report['author_report']?></td>
                     <td><?=$report['text_report']?></td>
                     <td><?=$report['date_report']?></td>
