@@ -12,8 +12,9 @@
 
     <body>
         <div class="container">
-            <?php include 'header.php' ?>
-            <?= $content ?>
+            <?php include 'header.php';
+            echo $content;
+            include 'footer.php'?>
         </div>
     </body>
 </html>

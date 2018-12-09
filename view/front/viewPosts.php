@@ -2,7 +2,6 @@
 $title = 'J.Forteroche | Posts';
 ob_start();
 ?>
-
     <section id="posts" class="row">
         <div class="col-lg-12">
             <?php
@@ -39,7 +38,7 @@ ob_start();
         </div>
         <?php
             if (!empty($_SESSION['username'])) {
-                echo '<div class="col-lg-offset-2 col-lg-4 add_post"><a href="?action=add_post" class="btn btn-sm btn-primary col-lg-4"><span class="glyphicon glyphicon-book"></span> Ajouter Post</a></div>';
+                echo '<div class="col-lg-4 add_post"><a href="?action=add_post" class="btn btn-sm btn-primary col-lg-4"><span class="glyphicon glyphicon-book"></span> Ajouter Post</a></div>';
             }
             ?>
     </section>

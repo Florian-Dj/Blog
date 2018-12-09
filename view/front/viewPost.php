@@ -51,7 +51,6 @@ ob_start();
                 </fieldset>
             </form>
         </div>
-
     </section>
 
 <?php

@@ -75,3 +75,11 @@ section{
 .form_report{
     margin-top: 50px;
 }
+
+
+/*Gestion Footer*/
+.footer{
+    margin-top: 100px;
+    padding: 25px 0;
+    text-align: right;
+}
