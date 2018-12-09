@@ -77,7 +77,7 @@
                         $commentController->addComment($_GET['post'], $_POST['username'], nl2br($_POST['text_comment']));
                     }
                     else{
-                        echo "Erreur : Aous les champs ne sont pas remplis !";
+                        echo "Erreur : Tous les champs ne sont pas remplis !";
                     }
                 }
                 else{
@@ -99,9 +99,23 @@
                 if (isset($_GET['post']) && $_GET['post'] > 0 && isset($_GET['comment']) && $_GET['comment'] > 0 ){
                     $reportController->formReport($_GET['comment']);
                 }
+                else{
+                    echo 'Erreur : Aucun identifiant de post ou de commentaire envoyé';
+                }
                 break;
             case 'form_report':
-                $reportController->addReport($_GET['post'], $_GET['comment'], $_POST['username_report'], $_POST['text_report']);
+                if (isset($_GET['post']) && isset($_GET['comment'])){
+                    if (!empty($_POST['username_report']) && !empty($_POST['text_report'])){
+                        $reportController->addReport($_GET['post'], $_GET['comment'], $_POST['username_report'], $_POST['text_report']);
+                        break;
+                    }
+                    else{
+                        echo "Erreur : Tous les champs ne sont pas remplis !";
+                    }
+                }
+                else{
+                    echo 'Erreur : Aucun identifiant de post ou de commentaire envoyé';
+                }
                 break;
 
             case 'management':

@@ -1,3 +1,3 @@
 <div class="footer col-lg-12">
-    Copyright © Jean Forteroche | Design : Florian
+    © 2018 - Tout droits réservés / SIte réalisé par Florian
 </div>

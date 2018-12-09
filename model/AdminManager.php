@@ -27,14 +27,24 @@ class AdminManager extends Manager
                     echo 'Mauvais  identifiant ou mot de passe';
                 }
             }
-            return $admin;
         }
+        return $admin;
     }
 
-    public function getManagement()
+    public function getManagementReport()
     {
         $db = $this->dbConnect();
-        $management = $db->prepare('SELECT * FROM report ORDER BY  date_report');
-        return $management;
+        $management_report = $db->query('SELECT * FROM report ORDER BY date_report');
+        return $management_report;
     }
+/*
+    public function getManagementComment($id)
+    {
+        $db = $this->dbConnect();
+        $management_comment = $db->prepare('SELECT * FROM comment WHERE comment_id = ?');
+        $management_comment->execute(array($id));
+        return $management_comment;
+    }
+*/
+
 }

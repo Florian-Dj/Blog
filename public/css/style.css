@@ -77,6 +77,14 @@ section{
 }
 
 
+/*Gestion Management*/
+#management td{
+    text-align: center;
+}
+#management th{
+    text-align: center;
+}
+
 /*Gestion Footer*/
 .footer{
     margin-top: 100px;

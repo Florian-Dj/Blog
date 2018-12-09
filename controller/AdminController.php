@@ -1,21 +1,23 @@
 <?php
 
 namespace OpenClassRoom\Blog\Controller;
-require ('./model/AdminManager.php');
+require (__DIR__ . '/../model/AdminManager.php');
 
 class AdminController
 {
     public function management()
     {
         $adminManager = new \OpenClassRoom\Blog\Model\AdminManager();
-        $management = $adminManager->getManagement();
+        $management_report = $adminManager->getManagementReport();
+        //$management_comment = $adminManager->getManagementComment(intval(15);
 
-        require('./view/back/viewManagement.php');
+        require(__DIR__ . '/../view/back/viewManagement.php');
     }
+
     //Management Admin
     public function connect()
     {
-        require('./view/front/viewConnect.php');
+        require(__DIR__ . '/../view/front/viewConnect.php');
     }
 
     public function formConnect()

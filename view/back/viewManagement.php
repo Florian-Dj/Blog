@@ -3,17 +3,37 @@ $title = 'J.Forteroche | Gestion';
 ob_start();
 ?>
 
-    <section id="post">
+    <section id="management" class="col-lg-12">
+        <table class="col-lg-12">
+            <tr>
+                <th>Id Post</th>
+                <th>Auteur Commentaire</th>
+                <th>Text Commentaire</th>
+                <th>Auteur Signalement</th>
+                <th>Text Signalement</th>
+                <th>Date Signalement</th>
+                <th>Gestion</th>
+            </tr>
         <?php
-            while ($report = $reports->fetch())
+            while ($report = $management_report->fetch())
             {
-                echo 'Id Post: ' . $report['post_id'] . ' ,Id Commentaire: ' . $report['comment_id'] . ' ,Auteur du signalement: ' . $report['author_report'] .
-                    ' ,Texte du signalement: ' . $report['text_report'] . ' ,Date du signalement: ' . $report['date_report'];
+                ?>
+                <tr>
+                    <td><a href="?action=post&post=<?=$report['post_id']?>" target="_blank"><?=$report['post_id']?></a></td>
+                    <td>Auteur</td>
+                    <td>Texte</td>
+                    <td><?=$report['author_report']?></td>
+                    <td><?=$report['text_report']?></td>
+                    <td><?=$report['date_report']?></td>
+                    <td class="col-lg-1"><a href="#" class="btn btn-xs btn-success"><span class="glyphicon glyphicon-ok"></span></a><a href="#" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-remove-sign"></span></a></td>
+                </tr>
+            <?php
             }
         ?>
+        </table>
     </section>
 
 <?php
-$reports->closeCursor();
+$management_report->closeCursor();
 $content = ob_get_clean();
-require('./view/front/template.php');
+require(__DIR__ . '/../front/template.php');
