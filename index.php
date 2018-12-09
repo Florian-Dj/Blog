@@ -1,14 +1,6 @@
 <?php
     session_start();
 
-    /*
-    function loadClass($class)
-    {
-        require 'controller/' . $class . '.php';
-    }
-    spl_autoload_register('loadClass');
-    */
-
     require('controller/PostController.php');
     require('controller/CommentController.php');
     require('controller/ReportController.php');
@@ -101,7 +93,7 @@
                 break;
 
             case 'report_comment':
-                $reportController->getReport($_GET['comment']);
+                $reportController->formReport($_GET['comment']);
                 break;
             case 'form_report':
                 $reportController->addReport($_GET['post'], $_GET['comment'], $_POST['username_report'], $_POST['text_report']);

@@ -10,6 +10,16 @@ class PostManager extends Manager
     private $_author;
     private $_text;
 
+    //Constructor
+    /*
+    public function __construct($_postId, $_title, $_author, $_text)
+    {
+        $this->_postId = $_postId;
+        $this->_title = $_title;
+        $this->_author = $_author;
+        $this->_text = $_text;
+    }*/
+
     //Hydrate
     public function hydrate(array $data)
     {

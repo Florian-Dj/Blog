@@ -5,11 +5,11 @@ require_once('Manager.php');
 
 class ReportManager extends Manager
 {
-    public function getReport()
+    public function formReport($idComment)
     {
         $db = $this->dbConnect();
-        $reports = $db->prepare('SELECT * FROM comment WHERE status_comment = 1');
-        $reports->execute(array());
+        $reports = $db->prepare('SELECT * FROM comment WHERE report_comment = true, comment_id = ?');
+        $reports->execute(array($idComment));
 
         return $reports;
     }

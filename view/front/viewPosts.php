@@ -9,7 +9,7 @@ ob_start();
             while ($data = $posts->fetch()) {
                 ?>
                 <div id="posts_frame" class="col-lg-10">
-                    <h3><a href="?action=post&post=<?=$data['post_id']?>"><?= htmlspecialchars($data['title']) ?></a></h3>
+                    <h3><?= htmlspecialchars($data['title']) ?></h3>
                     <p class="author">
                         Auteur: <?= htmlspecialchars($data['author'])?><br />
                         Publier le: <?= htmlspecialchars($data['date_create'])?><br />
@@ -30,6 +30,7 @@ ob_start();
                             echo '<a href="?action=deletePost&post=' . $data['post_id'] . '" class="btn btn-sm btn-danger">Supprimer Post <span class="glyphicon glyphicon-remove-sign"></span></a>';
                         }
                         ?>
+                    <a href="?action=post&post=<?=$data['post_id']?>" class="btn btn-lg btn-default">Lire la suite</a>
                     </p>
                 </div>
                 <?php

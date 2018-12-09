@@ -7,10 +7,11 @@ require('./model/ReportManager.php');
 class ReportController
 {
     //Management Reports
-    public function getReport($idComment)
+    public function formReport($idComment)
     {
         $reportManager = new \OpenClassRoom\Blog\Model\ReportManager();
-        $reports = $reportManager->getReport();
+        $reports = $reportManager->formReport($idComment);
+
         require('./view/front/viewReport.php');
     }
 
