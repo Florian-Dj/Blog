@@ -6,7 +6,7 @@ ob_start();
     <section id="management" class="col-lg-12">
         <table class="col-lg-12">
             <tr>
-                <th>Id Post</th>
+                <th>Post</th>
                 <th>Auteur Commentaire</th>
                 <th>Text Commentaire</th>
                 <th>Auteur Signalement</th>
@@ -19,13 +19,28 @@ ob_start();
             {
                 ?>
                 <tr>
-                    <td><a href="?action=post&post=<?=$report['post_id']?>" target="_blank"><?=$report['post_id']?></a></td>
+                    <td><a href="?action=post&post=<?=$report['post_id']?>" target="_blank"><?=$report['title']?></a></td>
                     <td><?=$report['username']?></td>
                     <td><?=$report['text']?></td>
                     <td><?=$report['author_report']?></td>
                     <td><?=$report['text_report']?></td>
                     <td><?=$report['date_report']?></td>
-                    <td class="col-lg-1"><a href="#" class="btn btn-xs btn-success"><span class="glyphicon glyphicon-ok"></span></a><a href="#" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-remove-sign"></span></a></td>
+
+                    <?php
+                    if ($report['status_report'] === 'maintenance'){?>
+                        <td class="col-lg-1">
+                        <a href="?action=report_management&report_id=<?=$report['report_id']?>&comment_id=<?=$report['comment_id']?>&status=valid" title="Validé Commentaire" class="btn btn-xs btn-success"><span class="glyphicon glyphicon-ok"></span></a>
+                        <a href="?action=report_management&report_id=<?=$report['report_id']?>&comment_id=<?=$report['comment_id']?>&status=delete" title="Supprimé Commentaire" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-remove-sign"></span></a>
+                    </td>
+                    <?php
+                    }
+                    elseif($report['status_report'] === 'delete'){
+                        echo '<td class="col-lg-1"><span class="glyphicon glyphicon-remove-sign" style="color: red" title="Supprimé Commentaire"></span></td>';
+                    }
+                    elseif ($report['status_report'] === 'valid'){
+                        echo '<td class="col-lg-1"><span class="glyphicon glyphicon-ok-sign" style="color: darkgreen" title="Validé Commentaire"></span></td>';
+                    }
+                    ?>
                 </tr>
             <?php
             }

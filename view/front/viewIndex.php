@@ -3,9 +3,9 @@ $title = 'J.Forteroche | Acteur et Ecrivain';
 ob_start();
 ?>
 
-<section id="home">
+<section id="home" class="row">
     <h2>Billet simple pour l'Alaska</h2>
-    <img src="./public/images/alaska.jpg">
+    <img class="col-lg-12" src="./public/images/alaska.jpg">
     <div id="posts_frame">
             <?php
             while ($data = $req->fetch()) {

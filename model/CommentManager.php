@@ -115,4 +115,11 @@ class CommentManager extends Manager
 
         return $comment;
     }
+
+    public function updateManagementComment($comment_id)
+    {
+        $db =$this->dbConnect();
+        $comment = $db->prepare('UPDATE comment SET report_comment = false WHERE comment_id = ?');
+        $comment->execute(array($comment_id));
+    }
 }

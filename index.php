@@ -118,8 +118,17 @@
                 }
                 break;
 
+            /*Gestion Management*/
             case 'management':
                 $adminController->management();
+                break;
+            case  'report_management':
+                if (isset($_GET['status']) && isset($_GET['report_id']) && $_GET['report_id'] > 0 && isset($_GET['comment_id']) && $_GET['comment_id'] > 0){
+                    $adminController->managementReport($_GET['status'], $_GET['report_id'], $_GET['comment_id']);
+                }
+                else{
+                    echo 'Erreur : Aucun status de repport envoyé';
+                }
                 break;
 
             /*Gestion de Connexion*/

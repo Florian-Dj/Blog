@@ -11,7 +11,7 @@ ob_start();
                     <h3><?= htmlspecialchars($data['title']) ?></h3>
                     <p class="author">
                         Auteur: <?= htmlspecialchars($data['author'])?><br />
-                        Publier le: <?= htmlspecialchars($data['date_create'])?><br />
+                        Publié le: <?= htmlspecialchars($data['date_create'])?><br />
                     </p>
                     <p>
                         <?php

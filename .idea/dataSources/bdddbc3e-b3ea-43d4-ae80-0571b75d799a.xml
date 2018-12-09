@@ -1085,30 +1085,36 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="233" name="date_report">
+    <column id="261" parent="233" name="status_report">
       <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="262" parent="233" name="date_report">
+      <Position>7</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="262" parent="233" name="id">
+    <index id="263" parent="233" name="id">
       <ColNames>report_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="263" parent="233" name="report_post_post_id_fk">
+    <index id="264" parent="233" name="report_post_post_id_fk">
       <ColNames>post_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="264" parent="233" name="report_comment_comment_id_fk">
+    <index id="265" parent="233" name="report_comment_comment_id_fk">
       <ColNames>comment_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="265" parent="233" name="id">
+    <key id="266" parent="233" name="id">
       <ColNames>report_id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <foreign-key id="266" parent="233" name="report_post_post_id_fk">
+    <foreign-key id="267" parent="233" name="report_post_post_id_fk">
       <ColNames>post_id</ColNames>
       <RefSchemaName>blog</RefSchemaName>
       <RefTableName>post</RefTableName>
@@ -1116,7 +1122,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="267" parent="233" name="report_comment_comment_id_fk">
+    <foreign-key id="268" parent="233" name="report_comment_comment_id_fk">
       <ColNames>comment_id</ColNames>
       <RefSchemaName>blog</RefSchemaName>
       <RefTableName>comment</RefTableName>

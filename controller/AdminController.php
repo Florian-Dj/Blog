@@ -13,7 +13,19 @@ class AdminController
         require(__DIR__ . '/../view/back/viewManagement.php');
     }
 
-    //Management Admin
+    public function managementReport($status, $report_id, $comment_id){
+        $adminManager = new \OpenClassRoom\Blog\Model\AdminManager();
+        $management_report = $adminManager->updateManagementReport($status, $report_id);
+
+        if ($status == 'valid'){
+            $commentManager = new \OpenClassRoom\Blog\Model\CommentManager();
+            $comment_report = $commentManager->updateManagementComment($comment_id);
+        }
+
+        header('Location: ?action=management');
+    }
+
+    //Connect Admin
     public function connect()
     {
         require(__DIR__ . '/../view/front/viewConnect.php');
