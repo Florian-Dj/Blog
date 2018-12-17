@@ -1,10 +1,6 @@
 <nav class="navbar">
-    <div class="container-fluid row">
-        <div class="col-lg-7">
-            <h1 class="col-lg-6">Jean FORTEROCHE</h1>
-            <h2 class="col-lg-4">Acteur / Ecrivain</h2>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
+    <div class="container-fluid row col-lg-5 col-lg-offset-4">
+        <ul class="nav navbar-nav col-lg-12">
             <li class="active"><a href="./index.php">Accueil</a></li>
             <li><a href="?action=posts">Billets</a></li>
             <?php

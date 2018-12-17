@@ -11,10 +11,10 @@
     </head>
 
     <body>
+    <?php include 'header.php';?>
         <div class="container">
-            <?php include 'header.php';
-            echo $content;
-            include 'footer.php'?>
+            <?=$content;?>
         </div>
+            <?php include 'footer.php'?>
     </body>
 </html>

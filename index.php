@@ -1,6 +1,14 @@
 <?php
     session_start();
 
+    /*
+     * function my_autoloader($class){
+     * include 'controller/' . $class . '.php';
+     * spl_autoload_register('my_autoloader');
+     *
+     * }
+     */
+
     require('controller/PostController.php');
     require('controller/CommentController.php');
     require('controller/ReportController.php');

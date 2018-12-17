@@ -35,10 +35,10 @@ ob_start();
                     <?php
                     }
                     elseif($report['status_report'] === 'delete'){
-                        echo '<td class="col-lg-1"><span class="glyphicon glyphicon-remove-sign" style="color: red" title="Supprimé Commentaire"></span></td>';
+                        echo '<td class="col-lg-1"><span class="glyphicon glyphicon-remove-sign" style="color: red" title="Commentaire non affiché"></span></td>';
                     }
                     elseif ($report['status_report'] === 'valid'){
-                        echo '<td class="col-lg-1"><span class="glyphicon glyphicon-ok-sign" style="color: darkgreen" title="Validé Commentaire"></span></td>';
+                        echo '<td class="col-lg-1"><span class="glyphicon glyphicon-ok-sign" style="color: darkgreen" title="Commentaire affiché"></span></td>';
                     }
                     ?>
                 </tr>
