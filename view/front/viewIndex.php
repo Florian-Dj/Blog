@@ -4,8 +4,8 @@ ob_start();
 ?>
 
 <section id="home" class="row">
-    <h2>Billet simple pour l'Alaska</h2>
-    <img class="col-lg-12" src="./public/images/alaska.jpg">
+    <h2 class="hidden-xs">Billet simple pour l'Alaska</h2>
+    <img class="col-sm-12 hidden-xs" src="./public/images/alaska.jpg">
     <div id="posts_frame" class="col-lg-12">
         <hr/>
         <h2>Derniers Billets</h2>

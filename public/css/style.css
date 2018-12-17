@@ -136,6 +136,11 @@ hr{
     font-size: 1.15em;
 }
 
+.unique_comment{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 /*Gestion Repports*/
 .form_report{
     margin-top: 50px;

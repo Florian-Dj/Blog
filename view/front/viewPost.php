@@ -17,12 +17,14 @@ ob_start();
                 <?php
                 while ($comment = $comments->fetch())
                 {
+                    echo '<div class="unique_comment">';
                     echo '<p><em>Auteur : ' . $comment['username'] . '<br/>Publier le :' . $comment['date_create'] . '</em></p>';
                     echo '<p class="comment_text">' . $comment['text'] . '</p>';
                     echo '<a href="?action=report_comment&post=' . $posts['post_id'] . '&comment=' . $comment['comment_id'] . '" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-exclamation-sign"></span> Signaler</a>';
                     if (!empty($_SESSION['username'])) {
                         echo '<a href="?action=deleteComment&post=' .$posts['post_id'] . '&comment=' . $comment['comment_id'] . '" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-remove-sign"></span> Supprimer commentaire</a>';
                     }
+                    echo '</div>';
                 }
                 ?>
             </div>
