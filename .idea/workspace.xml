@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa47c138-16f3-4715-af6d-1c077e38c5d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/CommentManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/CommentManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/PostManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/PostManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.php" afterDir="false" />
-    </list>
+    <list default="true" id="fa47c138-16f3-4715-af6d-1c077e38c5d3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,29 +92,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="56" column="42" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/controller.php">
+        <entry file="file://$PROJECT_DIR$/model/AdminManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/PostController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+            <state relative-caret-position="119">
+              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -129,35 +104,91 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/PostManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+            <state relative-caret-position="136">
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/CommentManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/AdminManager.php">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/model.php">
+        <entry file="uml://DATABASE/bdddbc3e-b3ea-43d4-ae80-0571b75d799a.SCHEMA:blog">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>DATABASE</ID>
+              <OriginalElement>bdddbc3e-b3ea-43d4-ae80-0571b75d799a.SCHEMA:blog</OriginalElement>
+              <nodes>
+                <node x="67.75" y="423.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.report</node>
+                <node x="81.25" y="0.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.post</node>
+                <node x="0.0" y="211.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.comment</node>
+                <node x="316.0" y="0.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.admin</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.comment" target="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.post">
+                  <point x="0.0" y="-81.0" />
+                  <point x="108.0" y="186.0" />
+                  <point x="124.25" y="186.0" />
+                  <point x="-43.0" y="80.5" />
+                </edge>
+                <edge source="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.report" target="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.comment">
+                  <point x="-49.75" y="-91.5" />
+                  <point x="117.5" y="398.0" />
+                  <point x="108.0" y="398.0" />
+                  <point x="0.0" y="81.0" />
+                </edge>
+                <edge source="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.report" target="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.post">
+                  <point x="49.75" y="-91.5" />
+                  <point x="217.0" y="398.0" />
+                  <point x="226.5" y="398.0" />
+                  <point x="226.5" y="186.0" />
+                  <point x="210.25" y="186.0" />
+                  <point x="43.0" y="80.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="-197.5" y="107.5" />
+              <SelectedNodes>
+                <node>bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.comment</node>
+              </SelectedNodes>
+              <Categories>
+                <Category>Key columns</Category>
+                <Category>Columns</Category>
+              </Categories>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/front/template.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+            <state relative-caret-position="187">
+              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/front/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/front/viewPosts.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -213,11 +244,20 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2405" />
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/twig/extensions" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="1912" />
     <option name="y" value="-8" />
-    <option name="width" value="1275" />
-    <option name="height" value="1025" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -245,6 +285,9 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -270,7 +313,24 @@
             <path>
               <item name="Blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="Blog" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Blog" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Blog" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="back" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Blog" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Blog" type="b2602c69:ProjectViewProjectNode" />
@@ -348,13 +408,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64407000" />
+    <option name="totallyTimeSpent" value="64410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16044776" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16684435" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -373,7 +432,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.16204691" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.104477614" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -483,8 +542,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/front/viewPosts.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
+        <state relative-caret-position="221">
+          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -494,31 +553,35 @@
           <ID>DATABASE</ID>
           <OriginalElement>bdddbc3e-b3ea-43d4-ae80-0571b75d799a.SCHEMA:blog</OriginalElement>
           <nodes>
-            <node x="37.75" y="401.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.report</node>
-            <node x="51.25" y="0.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.post</node>
+            <node x="67.75" y="423.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.report</node>
+            <node x="81.25" y="0.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.post</node>
             <node x="0.0" y="211.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.comment</node>
-            <node x="281.75" y="0.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.admin</node>
+            <node x="316.0" y="0.0">bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.admin</node>
           </nodes>
           <notes />
           <edges>
             <edge source="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.comment" target="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.post">
-              <point x="0.0" y="-70.0" />
-              <point x="88.0" y="186.0" />
-              <point x="94.25" y="186.0" />
+              <point x="0.0" y="-81.0" />
+              <point x="108.0" y="186.0" />
+              <point x="124.25" y="186.0" />
               <point x="-43.0" y="80.5" />
             </edge>
             <edge source="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.report" target="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.comment">
               <point x="-49.75" y="-91.5" />
-              <point x="0.0" y="70.0" />
+              <point x="117.5" y="398.0" />
+              <point x="108.0" y="398.0" />
+              <point x="0.0" y="81.0" />
             </edge>
             <edge source="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.report" target="bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.post">
               <point x="49.75" y="-91.5" />
-              <point x="186.5" y="186.0" />
-              <point x="180.25" y="186.0" />
+              <point x="217.0" y="398.0" />
+              <point x="226.5" y="398.0" />
+              <point x="226.5" y="186.0" />
+              <point x="210.25" y="186.0" />
               <point x="43.0" y="80.5" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.7947019867549668" x="229.0" y="292.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-197.5" y="107.5" />
           <SelectedNodes>
             <node>bdddbc3e-b3ea-43d4-ae80-0571b75d799a.TABLE:blog.comment</node>
           </SelectedNodes>
@@ -526,7 +589,6 @@
             <Category>Key columns</Category>
             <Category>Columns</Category>
           </Categories>
-          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
@@ -553,8 +615,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/AdminManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        <state relative-caret-position="119">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -562,13 +624,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/CommentManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -581,8 +636,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/PostManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        <state relative-caret-position="136">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -597,6 +652,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="56" column="42" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/CommentManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
         </state>
       </provider>
     </entry>
