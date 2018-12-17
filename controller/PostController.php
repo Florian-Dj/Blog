@@ -1,6 +1,10 @@
 <?php
 
 namespace OpenClassRoom\Blog\Controller;
+
+use OpenClassRoom\Blog\Model\CommentManager;
+use OpenClassRoom\Blog\Model\PostManager;
+
 require(__DIR__ . '/../model/PostManager.php');
 
 class PostController
@@ -8,8 +12,8 @@ class PostController
 
     public function index()
     {
-        $postManager = new \OpenClassRoom\Blog\Model\PostManager();
-        $req = $postManager->getPostsIndex();
+        $postManager = new PostManager();
+        $request = $postManager->getPostsIndex();
         require(__DIR__ . '/../view/front/viewIndex.php');
     }
 
@@ -17,36 +21,36 @@ class PostController
     //Management all Posts
     public function posts()
     {
-        $postsManager = new \OpenClassRoom\Blog\Model\PostManager();
-        $posts = $postsManager->getPosts();
+        $posts_manager = new PostManager();
+        $posts = $posts_manager->getPosts();
 
-        require('./view/front/viewPosts.php');
+        require(__DIR__ . '/../view/front/viewPosts.php');
     }
 
     //Management post
     public function post($postId)
     {
-        $postManager = new \OpenClassRoom\Blog\Model\PostManager();
-        $commentManager = new \OpenClassRoom\Blog\Model\CommentManager();
+        $post_manager = new PostManager();
+        $comment_manager = new CommentManager();
 
-        $posts = $postManager->getPost($postId);
-        $comments = $commentManager->getComments($postId);
+        $posts = $post_manager->getPost($postId);
+        $comments = $comment_manager->getComments($postId);
 
-        require('./view/front/viewPost.php');
+        require(__DIR__ . '/../view/front/viewPost.php');
     }
 
     public function addPost()
     {
-        require('./view/back/viewAddPost.php');
+        require(__DIR__ . '/../view/back/viewAddPost.php');
     }
 
     public function formAddPost($title, $author, $text)
     {
-        $postManager = new \OpenClassRoom\Blog\Model\PostManager();
+        $post_manager = new PostManager();
 
-        $affectedLines = $postManager->getAddPost($title, $author, $text);
+        $affected_lines = $post_manager->getAddPost($title, $author, $text);
 
-        if ($affectedLines === false) {
+        if ($affected_lines === false) {
             die('Impossible d\'ajouter le post !');
         } else {
             header('Location: ?action=posts');
@@ -55,8 +59,8 @@ class PostController
 
     public function deletePost($postId)
     {
-        $postManager = new \OpenClassRoom\Blog\Model\PostManager();
-        $post = $postManager->getDeletePost($postId);
+        $post_manager = new PostManager();
+        $post = $post_manager->getDeletePost($postId);
 
         if ($post === false) {
             die('Impossible d\'ajouter le post !');
@@ -67,18 +71,18 @@ class PostController
 
     public function updatePost($postId)
     {
-        $postManager = new \OpenClassRoom\Blog\Model\PostManager();
+        $post_manager = new PostManager();
 
-        $posts = $postManager->getPost($postId);
+        $posts = $post_manager->getPost($postId);
 
-        require('./view/back/viewEditPost.php');
+        require(__DIR__ . '/../view/back/viewEditPost.php');
     }
 
     public function formUpdatePost($postId, $postTitle, $postText)
     {
-        $postManager = new \OpenClassRoom\Blog\Model\PostManager();
+        $post_manager = new PostManager();
 
-        $post = $postManager->getUpdatePost($postId, $postTitle, $postText);
+        $post_manager->getUpdatePost($postId, $postTitle, $postText);
 
         header('Location: ?action=post&post=' . $_GET['post']);
     }

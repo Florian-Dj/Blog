@@ -1,7 +1,10 @@
 <?php
 
 namespace OpenClassRoom\Blog\Controller;
-require('./model/ReportManager.php');
+use OpenClassRoom\Blog\Model\CommentManager;
+use OpenClassRoom\Blog\Model\ReportManager;
+
+require(__DIR__ . '/../model/ReportManager.php');
 
 
 class ReportController
@@ -9,7 +12,7 @@ class ReportController
     //Management Reports
     public function formReport($idComment)
     {
-        $reportManager = new \OpenClassRoom\Blog\Model\ReportManager();
+        $reportManager = new ReportManager();
         $comments = $reportManager->formReport($idComment);
 
         require(__DIR__ . '/../view/front/viewReport.php');
@@ -17,10 +20,10 @@ class ReportController
 
     public function addReport($idPost, $idComment, $author_report, $text_report)
     {
-        $reportManager = new \OpenClassRoom\Blog\Model\ReportManager();
-        $reports = $reportManager->addReport($idPost, $idComment, $author_report, $text_report);
+        $report_manager = new ReportManager();
+        $report_manager->addReport($idPost, $idComment, $author_report, $text_report);
 
-        $reportManager = new \OpenClassRoom\Blog\Model\CommentManager();
-        $reports = $reportManager->updateComment($idComment);
+        $report_manager = new CommentManager();
+        $report_manager->updateComment($idComment);
     }
 }

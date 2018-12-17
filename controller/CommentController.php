@@ -1,35 +1,31 @@
 <?php
 
 namespace OpenClassRoom\Blog\Controller;
-require('./model/CommentManager.php');
+require(__DIR__ . '/../model/CommentManager.php');
 
 class  CommentController
 {
     //Management Comments
     public function addComment($postId, $author, $comment)
     {
-        $commentManager = new \OpenClassRoom\Blog\Model\CommentManager();
+        $comment_manager = new \OpenClassRoom\Blog\Model\CommentManager();
+        $affected_lines = $comment_manager->addComment($postId, $author, $comment);
 
-        $affectedLines = $commentManager->addComment($postId, $author, $comment);
-
-        if ($affectedLines === false) {
+        if ($affected_lines === false) {
             die('Impossible d\'ajouter le commentaire !');
-        }
-        else{
+        } else {
             header('Location: ?action=post&post=' . $postId);
         }
     }
 
     public function deleteComment($postID, $commentId)
     {
-        $commentManger = new \OpenClassRoom\Blog\Model\CommentManager();
-
-        $comment = $commentManger->delComment($commentId);
+        $comment_manager = new \OpenClassRoom\Blog\Model\CommentManager();
+        $comment = $comment_manager->delComment($commentId);
 
         if ($comment === false) {
             die('Impossible de supprimer le commentaire !');
-        }
-        else{
+        } else {
             header('Location: ?action=post&post=' . $_GET['post']);
         }
     }

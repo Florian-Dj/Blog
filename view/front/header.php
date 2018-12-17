@@ -1,7 +1,7 @@
 <nav class="navbar">
     <div class="container-fluid row col-lg-5 col-lg-offset-4">
         <ul class="nav navbar-nav col-lg-12">
-            <li class="active"><a href="./index.php">Accueil</a></li>
+            <li class="active"><a href="?action=index">Accueil</a></li>
             <li><a href="?action=posts">Billets</a></li>
             <?php
             if (!empty($_SESSION['username'])) {

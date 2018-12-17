@@ -27,17 +27,6 @@ class AdminManager extends Manager
         return $this->_id;
     }
 
-    public function getUsername()
-    {
-        return $this->_username;
-    }
-
-    public function getPassword()
-    {
-        return $this->_password;
-    }
-
-    //List setters
     public function setId($id)
     {
         $id = (int)$id;
@@ -46,11 +35,23 @@ class AdminManager extends Manager
         }
     }
 
+    public function getUsername()
+    {
+        return $this->_username;
+    }
+
+    //List setters
+
     public function setUsername($username)
     {
         if (is_string($username)) {
             $this->_username = $username;
         }
+    }
+
+    public function getPassword()
+    {
+        return $this->_password;
     }
 
     public function setPassword($password)
@@ -62,17 +63,17 @@ class AdminManager extends Manager
 
     public function getConnect()
     {
-        $db = $this->dbConnect();
-        $req = $db->query('SELECT * FROM admin');
-        $admin = $req->fetch();
-        $isPasswordCorrect = password_verify($_POST['password'], $admin['password']);
+        $data_base = $this->dbConnect();
+        $request = $data_base->query('SELECT * FROM admin');
+        $admin = $request->fetch();
+        $password_correct = password_verify($_POST['password'], $admin['password']);
         if ($admin['username'] != $_POST['username']) {
             header('Location: ?action=formConnect');
         } else {
             if (!$admin) {
                 echo 'Mauvais  identifiant ou mot de passe';
             } else {
-                if ($isPasswordCorrect) {
+                if ($password_correct) {
                     session_start();
                     $_SESSION['username'] = $admin['username'];
                     $_SESSION['password'] = $admin['password'];
@@ -87,17 +88,17 @@ class AdminManager extends Manager
 
     public function getManagementReport()
     {
-        $db = $this->dbConnect();
-        $management_report = $db->query('SELECT report.*, comment.username, comment.text, post.title FROM report, comment, post WHERE comment.comment_id = report.comment_id AND post.post_id = report.post_id  ORDER BY date_report DESC');
-        return $management_report;
+        $data_base = $this->dbConnect();
+        $manag_report = $data_base->query('SELECT report.*, comment.username, comment.text, post.title FROM report, comment, post WHERE comment.comment_id = report.comment_id AND post.post_id = report.post_id  ORDER BY date_report DESC');
+        return $manag_report;
     }
 
     public function updateManagementReport($status, $report_id)
     {
-        $db = $this->dbConnect();
-        $management_report = $db->prepare('UPDATE report SET status_report = ? WHERE report_id = ?');
-        $management_report->execute(array($status, $report_id));
+        $data_base = $this->dbConnect();
+        $manag_report = $data_base->prepare('UPDATE report SET status_report = ? WHERE report_id = ?');
+        $manag_report->execute(array($status, $report_id));
 
-        return $management_report;
+        return $manag_report;
     }
 }

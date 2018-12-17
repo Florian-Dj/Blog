@@ -10,20 +10,21 @@ ob_start();
                 <div id="posts_frame" class="col-lg-10">
                     <h3><?= htmlspecialchars($data['title']) ?></h3>
                     <p class="author">
-                        Auteur: <?= htmlspecialchars($data['author'])?><br />
-                        Publié le: <?= htmlspecialchars($data['date_create'])?><br />
+                        Auteur: <?= htmlspecialchars($data['author']) ?><br/>
+                        Publié le: <?= htmlspecialchars($data['date_create']) ?><br/>
                     </p>
                     <p>
                         <?php
                         if (strlen($data['text']) > 350) {
                             echo (substr($data['text'], 0, 350)) . "...<br />";
-                        }
-                        else{
+                        } else {
                             echo ($data['text']) . "<br />";
                         }
                         ?>
                     </p>
-                    <a href="?action=post&post=<?=$data['post_id']?>" class="btn btn-lg btn-default">Lire la suite</a><br/>
+                    <p>
+                        <a href="?action=post&post=<?= $data['post_id'] ?>" class="btn btn-lg btn-default">Lire la
+                            suite</a><br/>
                         <?php
                         if (!empty($_SESSION['username'])) {
                             echo '<a href="?action=updatePost&post=' . $data['post_id'] . '" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-edit"></span> Editer Post</a>';
@@ -34,13 +35,13 @@ ob_start();
                     </p>
                 </div>
                 <?php
-            }?>
+            } ?>
         </div>
         <?php
-            if (!empty($_SESSION['username'])) {
-                echo '<div class="col-lg-4 add_post"><a href="?action=add_post" class="btn btn-sm btn-primary col-lg-4"><span class="glyphicon glyphicon-book"></span> Ajouter Post</a></div>';
-            }
-            ?>
+        if (!empty($_SESSION['username'])) {
+            echo '<div class="col-lg-4 add_post"><a href="?action=add_post" class="btn btn-sm btn-primary col-lg-4"><span class="glyphicon glyphicon-book"></span> Ajouter Post</a></div>';
+        }
+        ?>
     </section>
 
 <?php

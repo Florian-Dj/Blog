@@ -5,23 +5,11 @@ require_once('Manager.php');
 
 class CommentManager extends Manager
 {
-    private $_commentId;
-    private $_post_Id;
+    private $_comment_id;
+    private $_post_id;
     private $_username;
     private $_text;
     private $_reportComment;
-
-    //Constructor
-    /*
-    public function __construct($_commentId, $_post_Id, $_username, $_text, $_reportComment)
-    {
-        $this->_commentId = $_commentId;
-        $this->_post_Id = $_post_Id;
-        $this->_username = $_username;
-        $this->_text = $_text;
-        $this->_reportComment = $_reportComment;
-    }
-    */
 
     //Hydrate
     public function hydrate(array $data)
@@ -34,55 +22,61 @@ class CommentManager extends Manager
         }
     }
 
-    //List getters
     public function getCommentId()
     {
-        return $this->_commentId;
+        return $this->_comment_id;
     }
+
+    public function setCommentId($comment_id)
+    {
+        $comment_id = (int)$comment_id;
+        if ($comment_id > 0) {
+            $this->_comment_id = $comment_id;
+        }
+    }
+
     public function getPostId()
     {
-        return $this->_post_Id;
+        return $this->_post_id;
     }
+
+    public function setPostId($post_id)
+    {
+        $post_id = (int)$post_id;
+        if ($post_id > 0) {
+            $this->_post_id = $post_id;
+        }
+    }
+
     public function getUsername()
     {
         return $this->_username;
     }
-    public function getText()
-    {
-        return $this->_text;
-    }
-    public function getReportComment()
-    {
-        return $this->_reportComment;
-    }
 
-    //List setters
-    public function setCommentId($commentId)
-    {
-        $commentId = (int)$commentId;
-        if ($commentId > 0) {
-            $this->_commentId = $commentId;
-        }
-    }
-    public function setPostId($post_Id)
-    {
-        $post_Id = (int)$post_Id;
-        if ($post_Id > 0) {
-            $this->_post_Id = $post_Id;
-        }
-    }
     public function setUsername($username)
     {
         if (is_string($username)) {
             $this->_username = $username;
         }
     }
+
+    public function getText()
+    {
+        return $this->_text;
+    }
+
     public function setText($text)
     {
         if (is_string($text)) {
             $this->_text = $text;
         }
     }
+
+    public function getReportComment()
+    {
+        return $this->_reportComment;
+    }
+
     public function setReportComment($reportComment)
     {
         if (is_string($reportComment)) {
@@ -94,8 +88,8 @@ class CommentManager extends Manager
     //Call SQL
     public function getComments($postId)
     {
-        $db = $this->dbConnect();
-        $comments = $db->prepare('SELECT * FROM comment WHERE post_id = ? AND report_comment = false ORDER BY date_create DESC');
+        $data_base = $this->dbConnect();
+        $comments = $data_base->prepare('SELECT * FROM comment WHERE post_id = ? AND report_comment = false ORDER BY date_create DESC');
         $comments->execute(array($postId));
 
         return $comments;
@@ -103,17 +97,17 @@ class CommentManager extends Manager
 
     public function addComment($postId, $author, $comment)
     {
-        $db = $this->dbConnect();
-        $comments = $db->prepare('INSERT INTO comment(post_id, username, text, date_create) VALUES(?, ?, ?, NOW())');
-        $affectedLines = $comments->execute(array($postId, $author, $comment));
+        $data_base = $this->dbConnect();
+        $comments = $data_base->prepare('INSERT INTO comment(post_id, username, text, date_create) VALUES(?, ?, ?, NOW())');
+        $affected_lines = $comments->execute(array($postId, $author, $comment));
 
-        return $affectedLines;
+        return $affected_lines;
     }
 
     public function delComment($commentId)
     {
-        $db = $this->dbConnect();
-        $comment = $db->prepare('DELETE FROM comment WHERE comment_id = ?');
+        $data_base = $this->dbConnect();
+        $comment = $data_base->prepare('DELETE FROM comment WHERE comment_id = ?');
         $comment->execute(array($commentId));
 
         return $comment;
@@ -121,8 +115,8 @@ class CommentManager extends Manager
 
     public function updateComment($idComment)
     {
-        $db = $this->dbConnect();
-        $comment = $db->prepare('UPDATE comment SET report_comment = true WHERE comment_id = ?');
+        $data_base = $this->dbConnect();
+        $comment = $data_base->prepare('UPDATE comment SET report_comment = true WHERE comment_id = ?');
         $comment->execute(array($idComment));
 
         return $comment;
@@ -130,8 +124,8 @@ class CommentManager extends Manager
 
     public function updateManagementComment($comment_id)
     {
-        $db =$this->dbConnect();
-        $comment = $db->prepare('UPDATE comment SET report_comment = false WHERE comment_id = ?');
+        $data_base = $this->dbConnect();
+        $comment = $data_base->prepare('UPDATE comment SET report_comment = false WHERE comment_id = ?');
         $comment->execute(array($comment_id));
     }
 }

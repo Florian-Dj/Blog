@@ -30,4 +30,4 @@ ob_start();
     </section>
 <?php
 $content = ob_get_clean();
-require('./view/front/template.php');
+require(__DIR__ . '/../front/template.php');

@@ -1,49 +1,49 @@
-html{
+html {
     height: 100%;
 }
 
-body{
+body {
     position: relative;
     min-height: 100%;
     background-color: #D9CDB8;
     width: 100%;
 }
 
-section{
+section {
     padding-top: 70px;
 }
 
-#home{
+#home {
     padding-top: 0;
 }
 
-.container{
+.container {
     padding-bottom: 100px;
 }
 
 /*Gestion bar navigation*/
-nav{
+nav {
     width: 100%;
     background-color: #403730;
 }
 
-.navbar{
+.navbar {
     margin-bottom: 0;
     border-radius: 0;
 }
 
-.nav{
+.nav {
     text-transform: uppercase;
     font-weight: bold;
 }
 
 /*Gestion page Accueil*/
-h2{
+h2 {
     margin-bottom: 0;
     margin-left: 6%;
 }
 
-hr{
+hr {
     display: block;
     margin-top: 0;
     margin-bottom: 40px;
@@ -52,11 +52,11 @@ hr{
     background-color: grey;
 }
 
-#posts_frame{
+#posts_frame {
     margin-top: 75px;
 }
 
-.post_unique{
+.post_unique {
     background-color: #403730;
     margin-top: 45px;
     margin-bottom: 30px;
@@ -64,98 +64,98 @@ hr{
     border: 3px solid grey;
     border-radius: 5px;
     text-align: justify;
-    box-shadow: 8px 8px 5px lightgrey;
     color: white;
 }
 
 /*Gestion Page Posts*/
-#posts div div{
+#posts div div {
     margin-top: 25px;
     margin-bottom: 25px;
 }
 
-#posts h3{
+#posts h3 {
     font-size: 1.8em;
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-#posts p{
+#posts p {
     text-align: justify;
     font-size: 1.25em;
     margin-bottom: 20px;
 }
 
-#posts .author{
+#posts .author {
     font-style: italic;
     font-size: 1em;
 }
 
-.btn-lg{
+.btn-lg {
     padding: 8px 25px;
     font-size: 1.1em;
     font-weight: bold;
 }
 
-.add_post{
+.add_post {
     margin-top: 25px;
 }
 
 /*Gestion des Pages Post*/
-.post_frame h3{
+.post_frame h3 {
     font-size: 2.25em;
     margin-bottom: 50px;
     text-transform: uppercase;
     font-weight: bold;
 }
 
-.comment_box h4{
+.comment_box h4 {
     font-size: 2em;
 }
 
-.post_frame .post{
+.post_frame .post {
     margin-top: 40px;
     font-size: 1.24em;
 }
 
 /*Gestion des commentaires*/
-.comment_box{
+.comment_box {
     margin-top: 40px;
 }
 
-.comment{
+.comment {
     margin-top: 25px;
 }
 
-.comment_box form{
+.comment_box form {
     margin-top: 40px;
 }
 
-.comment_text{
+.comment_text {
     font-size: 1.15em;
 }
 
-.unique_comment{
+.unique_comment {
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
 /*Gestion Repports*/
-.form_report{
+.form_report {
     margin-top: 50px;
 }
 
 /*Gestion Management*/
-#management td{
+#management td {
     text-align: center;
 }
-#management th{
+
+#management th {
     text-align: center;
 }
 
 /*Gestion Footer*/
-footer{
+footer {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -163,7 +163,7 @@ footer{
     background-color: #2E221B;
 }
 
-.footer{
+.footer {
     text-align: center;
     color: white;
     margin-top: 25px;

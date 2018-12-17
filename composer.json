@@ -1,5 +1,10 @@
 {
   "require": {
-    "twig/extensions": "~1.0"
+    "ext-pdo": "*"
+  },
+  "autoload": {
+  	"psr-4":{
+  		
+  	}
   }
 }

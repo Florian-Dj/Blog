@@ -5,9 +5,9 @@ require_once('Manager.php');
 
 class ReportManager extends Manager
 {
-    private $_reportId;
-    private $_postId;
-    private $_commentId;
+    private $_report_id;
+    private $_post_id;
+    private $_comment_id;
     private $_authorReport;
     private $_textReport;
     private $_statusReport;
@@ -23,60 +23,48 @@ class ReportManager extends Manager
         }
     }
 
-    //List getters
     public function getReportId()
     {
-        return $this->_reportId;
+        return $this->_report_id;
+    }
+
+    public function setReportId($report_id)
+    {
+        $report_id = (int)$report_id;
+        if ($report_id > 0) {
+            $this->_report_id = $report_id;
+        }
     }
 
     public function getPostId()
     {
-        return $this->_postId;
+        return $this->_post_id;
+    }
+
+    public function setPostId($post_id)
+    {
+        $post_id = (int)$post_id;
+        if ($post_id > 0) {
+            $this->_post_id = $post_id;
+        }
     }
 
     public function getCommentId()
     {
-        return $this->_commentId;
+        return $this->_comment_id;
+    }
+
+    public function setCommentId($comment_id)
+    {
+        $comment_id = (int)$comment_id;
+        if ($comment_id > 0) {
+            $this->_comment_id = $comment_id;
+        }
     }
 
     public function getAuthorReport()
     {
         return $this->_authorReport;
-    }
-
-    public function getTextReport()
-    {
-        return $this->_textReport;
-    }
-
-    public function getStatusReport()
-    {
-        return $this->_statusReport;
-    }
-
-    //List setters
-    public function setReportId($reportId)
-    {
-        $reportId = (int)$reportId;
-        if ($reportId > 0) {
-            $this->_reportId = $reportId;
-        }
-    }
-
-    public function setPostId($postId)
-    {
-        $postId = (int)$postId;
-        if ($postId > 0) {
-            $this->_postId = $postId;
-        }
-    }
-
-    public function setCommentId($commentId)
-    {
-        $commentId = (int)$commentId;
-        if ($commentId > 0) {
-            $this->_commentId = $commentId;
-        }
     }
 
     public function setAuthorReport($authorReport)
@@ -86,11 +74,21 @@ class ReportManager extends Manager
         }
     }
 
+    public function getTextReport()
+    {
+        return $this->_textReport;
+    }
+
     public function setTextReport($textReport)
     {
         if (is_string($textReport)) {
             $this->_textReport = $textReport;
         }
+    }
+
+    public function getStatusReport()
+    {
+        return $this->_statusReport;
     }
 
     public function setStatusReport($statusReport)
@@ -103,8 +101,8 @@ class ReportManager extends Manager
 
     public function formReport($idComment)
     {
-        $db = $this->dbConnect();
-        $comments = $db->prepare('SELECT * FROM comment WHERE comment_id = ?');
+        $data_base = $this->dbConnect();
+        $comments = $data_base->prepare('SELECT * FROM comment WHERE comment_id = ?');
         $comments->execute(array($idComment));
 
         return $comments;
@@ -112,8 +110,8 @@ class ReportManager extends Manager
 
     public function addReport($idPost, $idComment, $author_report, $text_report)
     {
-        $db = $this->dbConnect();
-        $reports = $db->prepare('INSERT INTO report(post_id, comment_id, author_report, text_report, date_report) VALUES(?, ?, ?, ?, NOW())');
+        $data_base = $this->dbConnect();
+        $reports = $data_base->prepare('INSERT INTO report(post_id, comment_id, author_report, text_report, date_report) VALUES(?, ?, ?, ?, NOW())');
         $reports->execute(array($idPost, $idComment, $author_report, $text_report));
         header('Location: ?action=post&post=' . $_GET['post']);
 

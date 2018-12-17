@@ -29,4 +29,4 @@ ob_start();
 
 <?php
 $content = ob_get_clean();
-require('./view/front/template.php');
+require(__DIR__ . '/../front/template.php');
