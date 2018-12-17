@@ -6,6 +6,60 @@ require_once('Manager.php');
 class AdminManager extends Manager
 {
 
+    private $_id;
+    private $_username;
+    private $_password;
+
+    //Hydrate
+    public function hydrate(array $data)
+    {
+        foreach ($data as $key => $value) {
+            $method = 'set' . ucfirst($key);
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+    }
+
+    //List getters
+    public function getId()
+    {
+        return $this->_id;
+    }
+
+    public function getUsername()
+    {
+        return $this->_username;
+    }
+
+    public function getPassword()
+    {
+        return $this->_password;
+    }
+
+    //List setters
+    public function setId($id)
+    {
+        $id = (int)$id;
+        if ($id > 0) {
+            $this->_id = $id;
+        }
+    }
+
+    public function setUsername($username)
+    {
+        if (is_string($username)) {
+            $this->_username = $username;
+        }
+    }
+
+    public function setPassword($password)
+    {
+        if (is_string($password)) {
+            $this->_password = $password;
+        }
+    }
+
     public function getConnect()
     {
         $db = $this->dbConnect();

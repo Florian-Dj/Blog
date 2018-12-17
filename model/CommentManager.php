@@ -59,23 +59,35 @@ class CommentManager extends Manager
     //List setters
     public function setCommentId($commentId)
     {
-        $this->_commentId = $commentId;
+        $commentId = (int)$commentId;
+        if ($commentId > 0) {
+            $this->_commentId = $commentId;
+        }
     }
     public function setPostId($post_Id)
     {
-        $this->_post_Id = $post_Id;
+        $post_Id = (int)$post_Id;
+        if ($post_Id > 0) {
+            $this->_post_Id = $post_Id;
+        }
     }
     public function setUsername($username)
     {
-        $this->_username = $username;
+        if (is_string($username)) {
+            $this->_username = $username;
+        }
     }
     public function setText($text)
     {
-        $this->_text = $text;
+        if (is_string($text)) {
+            $this->_text = $text;
+        }
     }
     public function setReportComment($reportComment)
     {
-        $this->_reportComment = $reportComment;
+        if (is_string($reportComment)) {
+            $this->_reportComment = $reportComment;
+        }
     }
 
 
