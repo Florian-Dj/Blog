@@ -15,7 +15,7 @@ ob_start();
                 <th>Gestion</th>
             </tr>
         <?php
-            while ($report = $management_report->fetch())
+            while ($report = $manag_report->fetch())
             {
                 ?>
                 <tr>
@@ -49,6 +49,6 @@ ob_start();
     </section>
 
 <?php
-$management_report->closeCursor();
+$manag_report->closeCursor();
 $content = ob_get_clean();
 require(__DIR__ . '/../front/template.php');

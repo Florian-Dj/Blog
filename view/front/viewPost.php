@@ -8,7 +8,7 @@ ob_start();
             <h3><?= htmlspecialchars($posts['title']) ?></h3>
             <p>Auteur: <?= htmlspecialchars($posts['author'])?></p>
             <p>Publier le: <?= htmlspecialchars($posts['date_create'])?><br />Mise à jour le: <?= htmlspecialchars($posts['date_update'])?></p>
-            <p class="col-lg-10 post"><?= ($posts['text']) ?></p>
+            <p class="col-lg-12 post"><?= ($posts['text']) ?></p>
         </div>
 
         <div class="col-lg-12 comment_box">
@@ -29,12 +29,12 @@ ob_start();
                 ?>
             </div>
 
-            <form class="form-horizontal col-lg-6" method="post" action="?action=addComment&post=<?= $_GET['post']?>">
+            <form class="form-horizontal col-lg-8" method="post" action="?action=addComment&post=<?= $_GET['post']?>">
                 <fieldset>
                     <legend>Ajouter un commentaire</legend>
                     <div class="form-group">
                         <label class="col-md-2 control-label" for="username">Nom :</label>
-                        <div class="col-md-8">
+                        <div class="col-md-5">
                             <input name="username" class="form-control input-md" id="username" required="" type="text" placeholder="">
                         </div>
                     </div>

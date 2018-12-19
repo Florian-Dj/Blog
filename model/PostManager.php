@@ -86,7 +86,7 @@ class PostManager extends Manager
     public function getPostsIndex()
     {
         $data_base = $this->dbConnect();
-        $request = $data_base->query('SELECT * FROM post ORDER BY date_create DESC LIMIT 0,2');
+        $request = $data_base->query('SELECT * FROM P4_post ORDER BY date_create DESC LIMIT 0,2');
 
         return $request;
     }
@@ -94,7 +94,7 @@ class PostManager extends Manager
     public function getPosts()
     {
         $data_base = $this->dbConnect();
-        $request = $data_base->query('SELECT * FROM post ORDER BY post_id');
+        $request = $data_base->query('SELECT * FROM P4_post ORDER BY post_id');
 
         return $request;
     }
@@ -102,7 +102,7 @@ class PostManager extends Manager
     public function getPost($postId)
     {
         $data_base = $this->dbConnect();
-        $request = $data_base->prepare('SELECT * FROM post WHERE post_id = ?');
+        $request = $data_base->prepare('SELECT * FROM P4_post WHERE post_id = ?');
         $request->execute(array($postId));
         $posts = $request->fetch();
 
@@ -112,7 +112,7 @@ class PostManager extends Manager
     public function getAddPost($title, $author, $text)
     {
         $data_base = $this->dbConnect();
-        $request = $data_base->prepare('INSERT INTO post(title, author, text, date_create, date_update) VALUES(?, ?, ?, NOW(), NOW())');
+        $request = $data_base->prepare('INSERT INTO P4_post(title, author, text, date_create, date_update) VALUES(?, ?, ?, NOW(), NOW())');
         $affected_lines = $request->execute(array($title, $author, $text));
 
         return $affected_lines;
@@ -121,7 +121,7 @@ class PostManager extends Manager
     public function getDeletePost($postId)
     {
         $data_base = $this->dbConnect();
-        $post = $data_base->prepare('DELETE FROM post WHERE post_id = ?');
+        $post = $data_base->prepare('DELETE FROM P4_post WHERE post_id = ?');
         $post->execute(array($postId));
 
         return $post;
@@ -130,7 +130,7 @@ class PostManager extends Manager
     public function getUpdatePost($postId, $title, $text)
     {
         $data_base = $this->dbConnect();
-        $post = $data_base->prepare('UPDATE post SET title = :title, text = :text, date_update = NOW() WHERE post_id = :id');
+        $post = $data_base->prepare('UPDATE P4_post SET title = :title, text = :text, date_update = NOW() WHERE post_id = :id');
         $post->execute(array(
             'title' => $title,
             'text' => $text,

@@ -89,7 +89,7 @@ class CommentManager extends Manager
     public function getComments($postId)
     {
         $data_base = $this->dbConnect();
-        $comments = $data_base->prepare('SELECT * FROM comment WHERE post_id = ? AND report_comment = false ORDER BY date_create DESC');
+        $comments = $data_base->prepare('SELECT * FROM P4_comment WHERE post_id = ? AND report_comment = false ORDER BY date_create DESC');
         $comments->execute(array($postId));
 
         return $comments;
@@ -98,7 +98,7 @@ class CommentManager extends Manager
     public function addComment($postId, $author, $comment)
     {
         $data_base = $this->dbConnect();
-        $comments = $data_base->prepare('INSERT INTO comment(post_id, username, text, date_create) VALUES(?, ?, ?, NOW())');
+        $comments = $data_base->prepare('INSERT INTO P4_comment(post_id, username, text, date_create) VALUES(?, ?, ?, NOW())');
         $affected_lines = $comments->execute(array($postId, $author, $comment));
 
         return $affected_lines;
@@ -107,7 +107,7 @@ class CommentManager extends Manager
     public function delComment($commentId)
     {
         $data_base = $this->dbConnect();
-        $comment = $data_base->prepare('DELETE FROM comment WHERE comment_id = ?');
+        $comment = $data_base->prepare('DELETE FROM P4_comment WHERE comment_id = ?');
         $comment->execute(array($commentId));
 
         return $comment;
@@ -116,7 +116,7 @@ class CommentManager extends Manager
     public function updateComment($idComment)
     {
         $data_base = $this->dbConnect();
-        $comment = $data_base->prepare('UPDATE comment SET report_comment = true WHERE comment_id = ?');
+        $comment = $data_base->prepare('UPDATE P4_comment SET report_comment = true WHERE comment_id = ?');
         $comment->execute(array($idComment));
 
         return $comment;
@@ -125,7 +125,7 @@ class CommentManager extends Manager
     public function updateManagementComment($comment_id)
     {
         $data_base = $this->dbConnect();
-        $comment = $data_base->prepare('UPDATE comment SET report_comment = false WHERE comment_id = ?');
+        $comment = $data_base->prepare('UPDATE P4_comment SET report_comment = false WHERE comment_id = ?');
         $comment->execute(array($comment_id));
     }
 }

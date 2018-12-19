@@ -1,6 +1,6 @@
-<nav class="navbar">
-    <div class="container-fluid row col-lg-5 col-lg-offset-4">
-        <ul class="nav navbar-nav col-lg-12">
+<nav class="navbar col-md-12">
+    <div class="container-fluid col-md-10 col-lg-9 col-md-offset-2 col-lg-offset-3">
+        <ul class="nav navbar-nav col-md-6 col-md-offset-1">
             <li class="active"><a href="?action=index">Accueil</a></li>
             <li><a href="?action=posts">Billets</a></li>
             <?php

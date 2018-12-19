@@ -915,14 +915,14 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="230" parent="2" name="admin"/>
-    <table id="231" parent="2" name="comment">
+    <table id="230" parent="2" name="p4_admin"/>
+    <table id="231" parent="2" name="p4_comment">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="232" parent="2" name="post">
+    <table id="232" parent="2" name="p4_post">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="233" parent="2" name="report">
+    <table id="233" parent="2" name="p4_report">
       <Engine>InnoDB</Engine>
     </table>
     <column id="234" parent="230" name="id">
@@ -1000,10 +1000,10 @@
       <ColNames>comment_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="247" parent="231" name="comment_ibfk_1">
+    <foreign-key id="247" parent="231" name="p4_comment_ibfk_1">
       <ColNames>post_id</ColNames>
       <RefSchemaName>blog</RefSchemaName>
-      <RefTableName>post</RefTableName>
+      <RefTableName>p4_post</RefTableName>
       <RefColNames>post_id</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
@@ -1118,7 +1118,7 @@
     <foreign-key id="267" parent="233" name="report_post_post_id_fk">
       <ColNames>post_id</ColNames>
       <RefSchemaName>blog</RefSchemaName>
-      <RefTableName>post</RefTableName>
+      <RefTableName>p4_post</RefTableName>
       <RefColNames>post_id</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
@@ -1126,7 +1126,7 @@
     <foreign-key id="268" parent="233" name="report_comment_comment_id_fk">
       <ColNames>comment_id</ColNames>
       <RefSchemaName>blog</RefSchemaName>
-      <RefTableName>comment</RefTableName>
+      <RefTableName>p4_comment</RefTableName>
       <RefColNames>comment_id</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>

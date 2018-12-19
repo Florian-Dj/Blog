@@ -102,7 +102,7 @@ class ReportManager extends Manager
     public function formReport($idComment)
     {
         $data_base = $this->dbConnect();
-        $comments = $data_base->prepare('SELECT * FROM comment WHERE comment_id = ?');
+        $comments = $data_base->prepare('SELECT * FROM P4_comment WHERE comment_id = ?');
         $comments->execute(array($idComment));
 
         return $comments;
@@ -111,7 +111,7 @@ class ReportManager extends Manager
     public function addReport($idPost, $idComment, $author_report, $text_report)
     {
         $data_base = $this->dbConnect();
-        $reports = $data_base->prepare('INSERT INTO report(post_id, comment_id, author_report, text_report, date_report) VALUES(?, ?, ?, ?, NOW())');
+        $reports = $data_base->prepare('INSERT INTO P4_report(post_id, comment_id, author_report, text_report, date_report) VALUES(?, ?, ?, ?, NOW())');
         $reports->execute(array($idPost, $idComment, $author_report, $text_report));
         header('Location: ?action=post&post=' . $_GET['post']);
 

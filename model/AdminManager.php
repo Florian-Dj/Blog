@@ -64,7 +64,7 @@ class AdminManager extends Manager
     public function getConnect()
     {
         $data_base = $this->dbConnect();
-        $request = $data_base->query('SELECT * FROM admin');
+        $request = $data_base->query('SELECT * FROM P4_admin');
         $admin = $request->fetch();
         $password_correct = password_verify($_POST['password'], $admin['password']);
         if ($admin['username'] != $_POST['username']) {
@@ -89,14 +89,14 @@ class AdminManager extends Manager
     public function getManagementReport()
     {
         $data_base = $this->dbConnect();
-        $manag_report = $data_base->query('SELECT report.*, comment.username, comment.text, post.title FROM report, comment, post WHERE comment.comment_id = report.comment_id AND post.post_id = report.post_id  ORDER BY date_report DESC');
+        $manag_report = $data_base->query('SELECT P4_report.*, P4_comment.username, P4_comment.text, P4_post.title FROM P4_report, P4_comment, P4_post WHERE P4_comment.comment_id = P4_report.comment_id AND P4_post.post_id = P4_report.post_id  ORDER BY date_report DESC');
         return $manag_report;
     }
 
     public function updateManagementReport($status, $report_id)
     {
         $data_base = $this->dbConnect();
-        $manag_report = $data_base->prepare('UPDATE report SET status_report = ? WHERE report_id = ?');
+        $manag_report = $data_base->prepare('UPDATE P4_report SET status_report = ? WHERE report_id = ?');
         $manag_report->execute(array($status, $report_id));
 
         return $manag_report;

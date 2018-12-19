@@ -10,7 +10,7 @@ ob_start();
         <hr/>
         <h2>Derniers Billets</h2>
             <?php
-            while ($data = $req->fetch()) {
+            while ($data = $request->fetch()) {
                 ?>
                 <div class="col-lg-4 col-lg-offset-1 post_unique">
                     <h3><a href="?action=post&post=<?=$data['post_id']?>"><?= htmlspecialchars($data['title']) ?></a></h3>
@@ -39,6 +39,6 @@ ob_start();
 </section>
 
 <?php
-$req->closeCursor();
+$request->closeCursor();
 $content = ob_get_clean();
 require('template.php');

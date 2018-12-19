@@ -14,7 +14,7 @@ section {
 }
 
 #home {
-    padding-top: 0;
+    padding-top: 70px;
 }
 
 .container {
@@ -39,7 +39,7 @@ nav {
 
 /*Gestion page Accueil*/
 h2 {
-    margin-bottom: 0;
+    margin-bottom: 25px;
     margin-left: 6%;
 }
 
